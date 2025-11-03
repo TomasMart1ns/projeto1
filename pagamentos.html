@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pagamentos — InfoAlunos (proto)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">InfoAlunos (proto)</a>
+      <nav class="main-nav">
+        <a href="index.html">Início</a>
+        <a href="pagamentos.html">Pagamentos</a>
+        <a href="requerimentos.html">Requerimentos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Pagamentos</h2>
+    <p class="muted">Pesquisar e listar pagamentos</p>
+
+    <div class="panel">
+      <label class="field"><span>Pesquisar</span><input placeholder="ID, ano ou anotação"></label>
+      <table class="table">
+        <thead><tr><th>Data</th><th>Descrição</th><th>Valor</th><th>Estado</th></tr></thead>
+        <tbody>
+          <tr><td>2025-10-01</td><td>Propina 2025</td><td>1.200€</td><td class="ok">Pago</td></tr>
+          <tr><td>2025-09-12</td><td>Taxa de candidatura</td><td>30€</td><td class="ok">Pago</td></tr>
+          <tr><td>2025-11-05</td><td>Contrato</td><td>100€</td><td class="pending">Pendente</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><small>Protótipo — Pagamentos</small></div>
+  </footer>
+</body>
+</html>

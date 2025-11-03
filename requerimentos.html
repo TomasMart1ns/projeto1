@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Requerimentos — InfoAlunos (proto)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">InfoAlunos (proto)</a>
+      <nav class="main-nav">
+        <a href="index.html">Início</a>
+        <a href="pagamentos.html">Pagamentos</a>
+        <a href="requerimentos.html">Requerimentos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Requerimentos</h2>
+    <p class="muted">Pesquisar e submeter requerimentos</p>
+
+    <div class="panel">
+      <label class="field"><span>Pesquisar</span><input placeholder="ID, tipo ou estado"></label>
+      <ul class="req-list">
+        <li>
+          <div class="req-item">
+            <div>
+              <strong>Declaração de Matrícula</strong>
+              <div class="muted">ID: RQ-2025-001 — enviado</div>
+            </div>
+            <div><a class="btn" href="#">Ver detalhe</a></div>
+          </div>
+        </li>
+        <li>
+          <div class="req-item">
+            <div>
+              <strong>Aproveitamento de Conhecimentos</strong>
+              <div class="muted">ID: RQ-2025-010 — pendente</div>
+            </div>
+            <div><a class="btn outline" href="#">Submeter</a></div>
+          </div>
+        </li>
+      </ul>
+
+      <h3>Submeter novo requerimento</h3>
+      <form class="panel-form">
+        <label class="field"><span>Tipo</span>
+          <select>
+            <option>Declaração de Matrícula</option>
+            <option>Aproveitamento</option>
+            <option>Declaração Social</option>
+          </select>
+        </label>
+        <label class="field"><span>Descrição</span><textarea placeholder="Explique o seu pedido"></textarea></label>
+        <div><button class="btn">Submeter</button></div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><small>Protótipo — Requerimentos</small></div>
+  </footer>
+</body>
+</html>

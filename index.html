@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>InfoAlunos — Dashboard (Prototype)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">InfoAlunos (proto)</a>
+      <nav class="main-nav">
+        <a href="index.html">Início</a>
+        <a href="pagamentos.html">Pagamentos</a>
+        <a href="requerimentos.html">Requerimentos</a>
+        <a href="#">Geral</a>
+        <a href="#">Avaliação</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Bem-vindo ao InfoAlunos (protótipo)</h1>
+      <p class="muted">Dashboard com cartões resumo — versão estática para desktop e mobile.</p>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="card">
+        <h3>Pagamentos</h3>
+        <p class="muted">Últimos pagamentos</p>
+        <ul class="mini-list">
+          <li>Contrato 2025 - Pendente - 100€</li>
+          <li>Propina - Pago - 1.200€</li>
+          <li>Bolsas - Crédito processado</li>
+        </ul>
+        <div class="card-cta"><a class="btn" href="pagamentos.html">Ver pagamentos</a></div>
+      </article>
+
+      <article class="card">
+        <h3>Últimas Pautas</h3>
+        <p class="muted">Pautas recentemente publicadas</p>
+        <ul class="mini-list">
+          <li>Programação I — 14/10/2025</li>
+          <li>Matemática — 10/10/2025</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>Requerimentos</h3>
+        <p class="muted">Pedidos recentes</p>
+        <ul class="mini-list">
+          <li>Declaração de matrícula — enviado</li>
+          <li>Pedido de aproveitamento — pendente</li>
+        </ul>
+        <div class="card-cta"><a class="btn outline" href="requerimentos.html">Gerir requerimentos</a></div>
+      </article>
+
+      <article class="card wide">
+        <h3>Avisos</h3>
+        <p class="muted">Mensagens recentes</p>
+        <ul class="mini-list">
+          <li><strong>Campus:</strong> Acesso ao SASU temporariamente limitado.</li>
+          <li><strong>Bolsas:</strong> Prazo para entrega de documentação 20/11.</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>Protótipo — InfoAlunos | Universidade (exemplo)</small>
+    </div>
+  </footer>
+</body>
+</html>
