@@ -1,77 +1,93 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>InfoAlunos — Dashboard (Prototype)</title>
+  <title>InfoAlunos - Serviço de Informação dos Alunos - v3.1.4</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="index.html">InfoAlunos (proto)</a>
-      <nav class="main-nav">
-        <a href="index.html">Início</a>
-        <a href="pagamentos.html">Pagamentos</a>
-        <a href="requerimentos.html">Requerimentos</a>
-        <a href="#">Geral</a>
-        <a href="#">Avaliação</a>
-      </nav>
+  <header class="portal-header">
+    <div class="header-left">
+      <img src="logo-uma.png" alt="Universidade da Madeira" class="logo-uma">
+      <span class="portal-title">InfoAlunos - Serviço de Informação dos Alunos - v3.1.4</span>
+    </div>
+    <div class="header-right">
+      <span class="lang">PT | EN</span>
+      <img src="user-avatar.png" alt="Avatar" class="avatar">
     </div>
   </header>
-
-  <main class="container">
-    <section class="hero">
-      <h1>Bem-vindo ao InfoAlunos (protótipo)</h1>
-      <p class="muted">Dashboard com cartões resumo — versão estática para desktop e mobile.</p>
-    </section>
-
-    <section class="dashboard-grid">
-      <article class="card">
-        <h3>Pagamentos</h3>
-        <p class="muted">Últimos pagamentos</p>
-        <ul class="mini-list">
-          <li>Contrato 2025 - Pendente - 100€</li>
-          <li>Propina - Pago - 1.200€</li>
-          <li>Bolsas - Crédito processado</li>
-        </ul>
-        <div class="card-cta"><a class="btn" href="pagamentos.html">Ver pagamentos</a></div>
-      </article>
-
-      <article class="card">
-        <h3>Últimas Pautas</h3>
-        <p class="muted">Pautas recentemente publicadas</p>
-        <ul class="mini-list">
-          <li>Programação I — 14/10/2025</li>
-          <li>Matemática — 10/10/2025</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>Requerimentos</h3>
-        <p class="muted">Pedidos recentes</p>
-        <ul class="mini-list">
-          <li>Declaração de matrícula — enviado</li>
-          <li>Pedido de aproveitamento — pendente</li>
-        </ul>
-        <div class="card-cta"><a class="btn outline" href="requerimentos.html">Gerir requerimentos</a></div>
-      </article>
-
-      <article class="card wide">
-        <h3>Avisos</h3>
-        <p class="muted">Mensagens recentes</p>
-        <ul class="mini-list">
-          <li><strong>Campus:</strong> Acesso ao SASU temporariamente limitado.</li>
-          <li><strong>Bolsas:</strong> Prazo para entrega de documentação 20/11.</li>
-        </ul>
-      </article>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <small>Protótipo — InfoAlunos | Universidade (exemplo)</small>
-    </div>
-  </footer>
+  <div class="main-layout">
+    <aside class="sidebar">
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Geral</a></li>
+        <li><a href="#">Serviços</a></li>
+        <li><a href="#">Concursos</a></li>
+        <li><a href="#">Avaliação</a></li>
+        <li><a href="#">Creditações</a></li>
+        <li><a href="#">Documentos</a></li>
+        <li><a href="#">Aula</a></li>
+        <li><a href="#">Disciplina</a></li>
+        <li><a href="#">Curso</a></li>
+        <li><a href="#">Instituição</a></li>
+        <li><a href="#">Eleições</a></li>
+      </ul>
+    </aside>
+    <main class="portal-content">
+      <div class="top-links">
+        <a href="#">O meu Correio</a> |
+        <a href="#">O meu Horário</a> |
+        <a href="#">Matrículas/Inscrições</a>
+      </div>
+      <div class="dashboard-rows">
+        <div class="row row-horizontal">
+          <div class="box pautas">
+            <div class="box-title">Últimas Pautas</div>
+            <div class="box-content lock"><span>🔒</span></div>
+          </div>
+          <div class="box pagamentos">
+            <div class="box-title">Pagamentos por Liquidar</div>
+            <div class="box-content">
+              <div class="entidade">Entidade Multibanco:<b>20697</b></div>
+              <div class="pagamentos-table-wrapper">
+                <table class="pagamentos-table">
+                  <thead>
+                    <tr>
+                      <th>Limite</th>
+                      <th>Desc.</th>
+                      <th>Ref MB</th>
+                      <th>Valor</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>2025-11-30</td><td>3ª Prestação de Propinas de CET's</td><td>215422503</td><td>69.70 EUR</td></tr>
+                    <tr><td>2025-12-31</td><td>4ª Prestação de Propinas de CET's</td><td>215422504</td><td>69.70 EUR</td></tr>
+                    <tr><td>2026-01-31</td><td>5ª Prestação de Propinas de CET's</td><td>215422505</td><td>69.70 EUR</td></tr>
+                    <tr><td>2026-02-28</td><td>6ª Prestação de Propinas de CET's</td><td>215422506</td><td>69.70 EUR</td></tr>
+                    <tr><td>2026-03-31</td><td>7ª Prestação de Propinas de CET's</td><td>215422507</td><td>69.70 EUR</td></tr>
+                    <tr><td>2026-04-30</td><td>8ª Prestação de Propinas de CET's</td><td>215422508</td><td>69.70 EUR</td></tr>
+                    <tr><td>2026-05-31</td><td>9ª Prestação de Propinas de CET's</td><td>215422509</td><td>69.70 EUR</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row row-single">
+          <div class="box processos">
+            <div class="box-title">Lista de Processos do Aluno - Unidade de Assuntos Académicos</div>
+            <div class="box-content lock"><span>🔒</span></div>
+          </div>
+        </div>
+        <div class="row row-single">
+          <div class="box avisos">
+            <div class="box-title">Avisos - Unidade de Assuntos Académicos (Max:50)</div>
+            <div class="box-content"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
