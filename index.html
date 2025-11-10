@@ -7,71 +7,127 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="index.html">InfoAlunos (proto)</a>
-      <nav class="main-nav">
-        <a href="index.html">Início</a>
-        <a href="pagamentos.html">Pagamentos</a>
-        <a href="requerimentos.html">Requerimentos</a>
-        <a href="#">Geral</a>
-        <a href="#">Avaliação</a>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <div class="logo-icon">UM</div>
+          <span class="logo-text">UNIVERSIDADE de MADEIRA</span>
+        </div>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item active">Início</a>
+        <a href="#" class="nav-item">Geral</a>
+        <a href="#" class="nav-item">Serviços</a>
+        <a href="#" class="nav-item">Concursos</a>
+        <a href="#" class="nav-item">Avaliação</a>
+        <a href="#" class="nav-item">Creditações</a>
+        <a href="#" class="nav-item">Documentos</a>
+        <a href="#" class="nav-item">Aula</a>
+        <a href="#" class="nav-item">Disciplina</a>
+        <a href="#" class="nav-item">Curso</a>
+        <a href="#" class="nav-item">Instituição</a>
+        <a href="#" class="nav-item">Eleições</a>
       </nav>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="site-header">
+        <div class="header-content">
+          <h1>InfoAlunos - Serviço de Informação dos Alunos - v3.1.4</h1>
+          <div class="header-links">
+            <a href="#">O meu Correio</a>
+            <a href="#">O meu Horário</a>
+            <a href="#">Matrículas/Inscrições</a>
+            <div class="user-profile">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='20' fill='%23e0e0e0'/%3E%3C/svg%3E" alt="Perfil">
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <section class="content-grid">
+          <div class="left-column">
+            <div class="card-section">
+              <h2>Últimas Pautas</h2>
+              <div class="info-icon">ℹ️</div>
+            </div>
+          </div>
+
+          <div class="right-column">
+            <div class="card-section">
+              <div class="section-header">
+                <h2>Pagamentos por Liquidar</h2>
+                <button class="settings-btn">⚙️</button>
+              </div>
+              <div class="payment-info">
+                <strong>Entidade Multibanco:</strong> 20697
+              </div>
+              <table class="payment-table">
+                <thead>
+                  <tr>
+                    <th>Limite</th>
+                    <th>Desc.</th>
+                    <th>Ref MB</th>
+                    <th>Valor</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2025-11-30</td>
+                    <td>3ª Prestação de Propinas de CET's</td>
+                    <td>215422503</td>
+                    <td>69.70 EUR</td>
+                  </tr>
+                  <tr>
+                    <td>2025-12-31</td>
+                    <td>4ª Prestação de Propinas de CET's</td>
+                    <td>215422504</td>
+                    <td>69.70 EUR</td>
+                  </tr>
+                  <tr>
+                    <td>2026-01-31</td>
+                    <td>5ª Prestação de Propinas de CET's</td>
+                    <td>215422505</td>
+                    <td>69.70 EUR</td>
+                  </tr>
+                  <tr>
+                    <td>2026-02-28</td>
+                    <td>6ª Prestação de Propinas de CET's</td>
+                    <td>215422506</td>
+                    <td>69.70 EUR</td>
+                  </tr>
+                  <tr>
+                    <td>2026-03-31</td>
+                    <td>7ª Prestação de Propinas de CET's</td>
+                    <td>215422507</td>
+                    <td>69.70 EUR</td>
+                  </tr>
+                  <tr>
+                    <td>2026-04-30</td>
+                    <td>8ª Prestação de Propinas de CET's</td>
+                    <td>215422508</td>
+                    <td>69.70 EUR</td>
+                  </tr>
+                  <tr>
+                    <td>2026-05-31</td>
+                    <td>9ª Prestação de Propinas de CET's</td>
+                    <td>215422509</td>
+                    <td>69.70 EUR</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section class="bottom-section">
+          <h2>Lista de Processos do Aluno - Unidade de Assuntos Académicos</h2>
+          <div class="info-icon">ℹ️</div>
+        </section>
+      </main>
     </div>
-  </header>
-
-  <main class="container">
-    <section class="hero">
-      <h1>Bem-vindo ao InfoAlunos (protótipo)</h1>
-      <p class="muted">Dashboard com cartões resumo — versão estática para desktop e mobile.</p>
-    </section>
-
-    <section class="dashboard-grid">
-      <article class="card">
-        <h3>Pagamentos</h3>
-        <p class="muted">Últimos pagamentos</p>
-        <ul class="mini-list">
-          <li>Contrato 2025 - Pendente - 100€</li>
-          <li>Propina - Pago - 1.200€</li>
-          <li>Bolsas - Crédito processado</li>
-        </ul>
-        <div class="card-cta"><a class="btn" href="pagamentos.html">Ver pagamentos</a></div>
-      </article>
-
-      <article class="card">
-        <h3>Últimas Pautas</h3>
-        <p class="muted">Pautas recentemente publicadas</p>
-        <ul class="mini-list">
-          <li>Programação I — 14/10/2025</li>
-          <li>Matemática — 10/10/2025</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h3>Requerimentos</h3>
-        <p class="muted">Pedidos recentes</p>
-        <ul class="mini-list">
-          <li>Declaração de matrícula — enviado</li>
-          <li>Pedido de aproveitamento — pendente</li>
-        </ul>
-        <div class="card-cta"><a class="btn outline" href="requerimentos.html">Gerir requerimentos</a></div>
-      </article>
-
-      <article class="card wide">
-        <h3>Avisos</h3>
-        <p class="muted">Mensagens recentes</p>
-        <ul class="mini-list">
-          <li><strong>Campus:</strong> Acesso ao SASU temporariamente limitado.</li>
-          <li><strong>Bolsas:</strong> Prazo para entrega de documentação 20/11.</li>
-        </ul>
-      </article>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <small>Protótipo — InfoAlunos | Universidade (exemplo)</small>
-    </div>
-  </footer>
+  </div>
 </body>
 </html>
