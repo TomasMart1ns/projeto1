@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 20 - Tooltip</title>
+  <style>
+    body {
+      font-family: Montserrat, system-ui, sans-serif;
+      margin: 2rem;
+      max-width: 600px;
+    }
+    /* 20. Tooltip */
+    .tooltip-container {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px dotted #1a5490;
+      cursor: help;
+      color: #1a5490;
+      font-weight: bold;
+    }
+    .tooltip-text {
+      visibility: hidden;
+      background-color: #1a5490;
+      color: #fff;
+      text-align: center;
+      padding: 0.5rem;
+      border-radius: 4px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -60px;
+      width: 120px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 0.85rem;
+      font-weight: normal;
+    }
+    .tooltip-text::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #1a5490 transparent transparent transparent;
+    }
+    .tooltip-container:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercício 20 - Tooltip</h1>
+
+  <p>Passe o mouse sobre os elementos destacados para ver o tooltip:</p>
+
+  <div style="margin-top: 2rem; line-height: 2;">
+    <div class="tooltip-container">
+      Informação 1
+      <span class="tooltip-text">Este é um tooltip informativo</span>
+    </div>
+
+    <div class="tooltip-container">
+      Informação 2
+      <span class="tooltip-text">Dica útil sobre este elemento</span>
+    </div>
+
+    <div class="tooltip-container">
+      Informação 3
+      <span class="tooltip-text">Conteúdo adicional explicativo</span>
+    </div>
+  </div>
+
+  <p style="margin-top: 2rem;">Os tooltips aparecem quando passas o mouse sobre os termos destacados.</p>
+</body>
+</html>
