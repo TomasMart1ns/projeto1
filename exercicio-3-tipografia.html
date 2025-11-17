@@ -68,9 +68,7 @@
 <body>
   <h1>Exercício 3 - Tipografia</h1>
   
-  <button class="btn" onclick="toggleFontSize()">Alternar Tamanho de Fontes</button>
-  
-  <div class="info-box" id="sizeInfo">
+  <div class="info-box">
     <p><strong>Estado:</strong> Tamanho normal</p>
   </div>
 
@@ -83,31 +81,5 @@
   <h2>Outro Título Secundário</h2>
   <p>A tipografia adequada melhora significativamente a legibilidade e a experiência do utilizador. Este exemplo mostra a escala de tamanhos e cores utilizadas no projeto.</p>
 
-  <script>
-    let isBig = false;
-    function toggleFontSize() {
-      const h1 = document.querySelector('h1');
-      const h2s = document.querySelectorAll('h2');
-      const h3 = document.querySelector('h3');
-      const ps = document.querySelectorAll('p');
-      const info = document.getElementById('sizeInfo');
-
-      if (!isBig) {
-        h1.style.fontSize = '42px';
-        h2s.forEach(h => h.style.fontSize = '24px');
-        h3.style.fontSize = '21px';
-        ps.forEach(p => p.style.fontSize = '18px');
-        info.innerHTML = '<p><strong>Estado:</strong> Tamanho aumentado 150%</p>';
-        isBig = true;
-      } else {
-        h1.style.fontSize = '28px';
-        h2s.forEach(h => h.style.fontSize = '16px');
-        h3.style.fontSize = '14px';
-        ps.forEach(p => p.style.fontSize = '12px');
-        info.innerHTML = '<p><strong>Estado:</strong> Tamanho normal</p>';
-        isBig = false;
-      }
-    }
-  </script>
 </body>
 </html>

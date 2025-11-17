@@ -67,43 +67,24 @@
   <h1>Exercício 4 - Accordion</h1>
   <p>Clique nos itens para expandir/colapsar o conteúdo:</p>
 
-  <button class="btn" onclick="toggleAllAccordions()">Expandir/Colapsar Todos</button>
-
-  <div class="info-box" id="accordionInfo">
-    <p><strong>Estado:</strong> Todos fechados</p>
+  <div class="info-box">
+    <p><strong>Nota:</strong> Os accordions utilizam a tag nativa <code>&lt;details&gt;</code> do HTML5.</p>
   </div>
 
-  <details id="acc1" onchange="updateAccordionInfo()">
+  <details>
     <summary>Accordion Item #1</summary>
     <p>Este é o conteúdo do primeiro item. Pode conter qualquer tipo de HTML e texto.</p>
   </details>
 
-  <details id="acc2" onchange="updateAccordionInfo()">
+  <details>
     <summary>Accordion Item #2</summary>
     <p>Este é o conteúdo do segundo item. Os accordions são úteis para organizar conteúdo em espaços pequenos.</p>
   </details>
 
-  <details id="acc3" onchange="updateAccordionInfo()">
+  <details>
     <summary>Accordion Item #3</summary>
     <p>Este é o conteúdo do terceiro item. Use accordions quando quiser poupar espaço na página.</p>
   </details>
 
-  <script>
-    let allOpen = false;
-
-    function toggleAllAccordions() {
-      const details = document.querySelectorAll('details');
-      allOpen = !allOpen;
-      details.forEach(d => d.open = allOpen);
-      updateAccordionInfo();
-    }
-
-    function updateAccordionInfo() {
-      const details = document.querySelectorAll('details');
-      const openCount = Array.from(details).filter(d => d.open).length;
-      const info = document.getElementById('accordionInfo');
-      info.innerHTML = `<p><strong>Estado:</strong> ${openCount} de ${details.length} itens abertos</p>`;
-    }
-  </script>
 </body>
 </html>

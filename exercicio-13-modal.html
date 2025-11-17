@@ -10,7 +10,12 @@
       margin: 2rem;
       max-width: 600px;
     }
-    /* 13. Modal */
+    
+    /* 13. Modal - CSS Only com Checkbox */
+    .modal-checkbox {
+      display: none;
+    }
+    
     .modal-btn {
       padding: 0.75rem 1.5rem;
       background-color: #1a5490;
@@ -22,42 +27,57 @@
       margin: 0.5rem;
       transition: all 0.3s ease;
     }
+    
     .modal-btn:hover {
       background-color: #0e3558;
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3);
     }
 
-    dialog {
-      padding: 0;
-      border: none;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      max-width: 500px;
-      animation: slideIn 0.3s ease;
-    }
-    @keyframes slideIn {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 999;
     }
 
-    dialog::backdrop {
-      background-color: rgba(0, 0, 0, 0.5);
-      animation: fadeIn 0.3s ease;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .modal-checkbox:checked + .modal-backdrop {
+      display: block;
     }
 
     .modal-content {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
       padding: 2rem;
+      max-width: 500px;
+      width: 90%;
+      z-index: 1000;
+      display: none;
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .modal-checkbox:checked + .modal-backdrop + .modal-content {
+      display: block;
     }
 
     .modal-header {
@@ -94,6 +114,7 @@
       background-color: #1a5490;
       color: #fff;
     }
+    
     .btn-confirm:hover {
       background-color: #0e3558;
     }
@@ -102,6 +123,7 @@
       background-color: #ddd;
       color: #333;
     }
+    
     .btn-cancel:hover {
       background-color: #bbb;
     }
@@ -113,93 +135,65 @@
       border-left: 4px solid #1a5490;
       margin: 2rem 0 1rem 0;
     }
+
+    label {
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
   <h1>Exercício 13 - Modal</h1>
 
   <div>
-    <button class="modal-btn" onclick="openModal('modal1')">Abrir Modal 1</button>
-    <button class="modal-btn" onclick="openModal('modal2')">Abrir Modal 2</button>
-    <button class="modal-btn" onclick="openModal('modal3')">Abrir Modal 3</button>
+    <label for="modal1" class="modal-btn">Abrir Modal 1</label>
+    <label for="modal2" class="modal-btn">Abrir Modal 2</label>
+    <label for="modal3" class="modal-btn">Abrir Modal 3</label>
   </div>
 
-  <div class="info-box" id="modalInfo">
-    <p><strong>Estado:</strong> Nenhum modal aberto</p>
+  <div class="info-box">
+    <p><strong>Modal:</strong> Diálogo que abre ao clicar nos botões (sem JavaScript).</p>
   </div>
 
-  <dialog id="modal1">
-    <div class="modal-content">
-      <div class="modal-header">Título do Modal 1</div>
-      <div class="modal-body">
-        <p>Este é um exemplo de diálogo modal. Contém um título, corpo de texto e botões de ação.</p>
-      </div>
-      <div class="modal-actions">
-        <button class="btn-confirm" onclick="confirmModal('Modal 1')">Confirmar</button>
-        <button class="btn-cancel" onclick="closeModal('modal1')">Cancelar</button>
-      </div>
+  <!-- Modal 1 -->
+  <input type="checkbox" id="modal1" class="modal-checkbox">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content">
+    <div class="modal-header">Título do Modal 1</div>
+    <div class="modal-body">
+      <p>Este é um exemplo de diálogo modal. Contém um título, corpo de texto e botões de ação.</p>
     </div>
-  </dialog>
-
-  <dialog id="modal2">
-    <div class="modal-content">
-      <div class="modal-header">⚠️ Aviso</div>
-      <div class="modal-body">
-        <p>Tem a certeza que deseja continuar com esta ação? Esta ação não pode ser desfeita.</p>
-      </div>
-      <div class="modal-actions">
-        <button class="btn-confirm" onclick="confirmModal('Aviso confirmado')">Continuar</button>
-        <button class="btn-cancel" onclick="closeModal('modal2')">Cancelar</button>
-      </div>
+    <div class="modal-actions">
+      <label for="modal1" class="btn-cancel">Cancelar</label>
+      <button class="btn-confirm">Confirmar</button>
     </div>
-  </dialog>
+  </div>
 
-  <dialog id="modal3">
-    <div class="modal-content">
-      <div class="modal-header">✓ Sucesso</div>
-      <div class="modal-body">
-        <p>A sua operação foi concluída com sucesso! Clique em OK para fechar este diálogo.</p>
-      </div>
-      <div class="modal-actions">
-        <button class="btn-confirm" onclick="closeModal('modal3')">OK</button>
-      </div>
+  <!-- Modal 2 -->
+  <input type="checkbox" id="modal2" class="modal-checkbox">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content">
+    <div class="modal-header">⚠️ Aviso</div>
+    <div class="modal-body">
+      <p>Tem a certeza que deseja continuar com esta ação? Esta ação não pode ser desfeita.</p>
     </div>
-  </dialog>
+    <div class="modal-actions">
+      <label for="modal2" class="btn-cancel">Cancelar</label>
+      <button class="btn-confirm">Continuar</button>
+    </div>
+  </div>
 
-  <script>
-    function openModal(modalId) {
-      const modal = document.getElementById(modalId);
-      modal.showModal();
-      updateModalInfo(`${modalId.toUpperCase()} aberto`);
-    }
+  <!-- Modal 3 -->
+  <input type="checkbox" id="modal3" class="modal-checkbox">
+  <div class="modal-backdrop"></div>
+  <div class="modal-content">
+    <div class="modal-header">✓ Sucesso</div>
+    <div class="modal-body">
+      <p>A sua operação foi concluída com sucesso! Clique em OK para fechar este diálogo.</p>
+    </div>
+    <div class="modal-actions">
+      <label for="modal3" class="btn-confirm">OK</label>
+    </div>
+  </div>
 
-    function closeModal(modalId) {
-      const modal = document.getElementById(modalId);
-      modal.close();
-      updateModalInfo('Nenhum modal aberto');
-    }
-
-    function confirmModal(action) {
-      updateModalInfo(`Ação confirmada: ${action}`);
-      setTimeout(() => {
-        document.querySelectorAll('dialog').forEach(d => d.close());
-        updateModalInfo('Nenhum modal aberto');
-      }, 1000);
-    }
-
-    function updateModalInfo(status) {
-      document.getElementById('modalInfo').innerHTML = `<p><strong>Estado:</strong> ${status}</p>`;
-    }
-
-    // Fecha modal ao clicar fora
-    document.querySelectorAll('dialog').forEach(dialog => {
-      dialog.addEventListener('click', (e) => {
-        if (e.target === dialog) {
-          dialog.close();
-          updateModalInfo('Nenhum modal aberto');
-        }
-      });
-    });
-  </script>
 </body>
 </html>

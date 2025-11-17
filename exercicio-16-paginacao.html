@@ -84,71 +84,24 @@
 <body>
   <h1>Exercício 16 - Paginação</h1>
 
-  <div class="content-area" id="contentArea">
-    <h3 id="pageTitle">Página 1</h3>
-    <p id="pageContent">Conteúdo da página 1. Este é um exemplo de paginação funcional.</p>
+  <div class="content-area">
+    <h3>Página 1</h3>
+    <p>Conteúdo da página 1. Este é um exemplo de paginação com HTML e CSS.</p>
   </div>
 
-  <div class="info-box" id="pageInfo">
-    <p><strong>Página Atual:</strong> 1 de 5</p>
+  <div class="info-box">
+    <p><strong>Paginação:</strong> Navegação através de múltiplas páginas de conteúdo</p>
   </div>
 
-  <ul class="pagination" id="paginationControls">
-    <li><a onclick="changePage(0)">← Anterior</a></li>
-    <li><a onclick="changePage(1)" class="active" id="page1">1</a></li>
-    <li><a onclick="changePage(2)" id="page2">2</a></li>
-    <li><a onclick="changePage(3)" id="page3">3</a></li>
-    <li><a onclick="changePage(4)" id="page4">4</a></li>
-    <li><a onclick="changePage(5)" id="page5">5</a></li>
-    <li><a onclick="changePage(6)">Próximo →</a></li>
+  <ul class="pagination">
+    <li><a href="#">← Anterior</a></li>
+    <li><a href="#" class="active">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">Próximo →</a></li>
   </ul>
 
-  <button class="btn" onclick="resetPagination()">Voltar para Página 1</button>
-
-  <script>
-    let currentPage = 1;
-    const totalPages = 5;
-
-    const pageContent = {
-      1: { title: 'Página 1', content: 'Este é o conteúdo da página 1. Use a paginação abaixo para navegar.' },
-      2: { title: 'Página 2', content: 'Este é o conteúdo da página 2. A paginação ajuda a organizar muitos dados.' },
-      3: { title: 'Página 3', content: 'Este é o conteúdo da página 3. Cada página contém diferentes informações.' },
-      4: { title: 'Página 4', content: 'Este é o conteúdo da página 4. Navegue para ver todo o conteúdo.' },
-      5: { title: 'Página 5', content: 'Este é o conteúdo da página 5. Esta é a última página disponível.' }
-    };
-
-    function changePage(pageNum) {
-      // Validações
-      if (pageNum === 0 && currentPage === 1) return; // Anterior na página 1
-      if (pageNum === 6 && currentPage === totalPages) return; // Próximo na última página
-      
-      if (pageNum === 0) pageNum = currentPage - 1;
-      else if (pageNum === 6) pageNum = currentPage + 1;
-      
-      if (pageNum < 1 || pageNum > totalPages) return;
-
-      currentPage = pageNum;
-      updatePage();
-    }
-
-    function updatePage() {
-      // Atualizar conteúdo
-      const content = pageContent[currentPage];
-      document.getElementById('pageTitle').textContent = content.title;
-      document.getElementById('pageContent').textContent = content.content;
-
-      // Atualizar paginação visual
-      document.querySelectorAll('.pagination a').forEach(a => a.classList.remove('active'));
-      document.getElementById('page' + currentPage).classList.add('active');
-
-      // Atualizar info
-      document.getElementById('pageInfo').innerHTML = `<p><strong>Página Atual:</strong> ${currentPage} de ${totalPages}</p>`;
-    }
-
-    function resetPagination() {
-      currentPage = 1;
-      updatePage();
-    }
-  </script>
 </body>
 </html>

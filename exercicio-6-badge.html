@@ -74,47 +74,27 @@
 <body>
   <h1>Exercício 6 - Badge</h1>
 
-  <button class="btn" onclick="toggleBadges()">Alternar Estado dos Badges</button>
-
-  <div class="info-box" id="badgeInfo">
-    <p><strong>Estado:</strong> Clique nos badges ou no botão acima para alternar</p>
+  <div class="info-box">
+    <p><strong>Badges:</strong> Pequenos componentes que destacam informações importantes</p>
   </div>
 
   <p>
-    Clique nos badges para ativar/desativar:
+    Diferentes tipos de badges:
   </p>
 
   <div>
-    <span class="badge badge-primary" onclick="toggleBadge(this, 'badge1')">Primary</span>
-    <span class="badge badge-secondary" onclick="toggleBadge(this, 'badge2')">Secondary</span>
-    <span class="badge badge-success" onclick="toggleBadge(this, 'badge3')">Success</span>
-    <span class="badge badge-danger" onclick="toggleBadge(this, 'badge4')">Danger</span>
+    <span class="badge badge-primary">Primary</span>
+    <span class="badge badge-secondary">Secondary</span>
+    <span class="badge badge-success">Success</span>
+    <span class="badge badge-danger">Danger</span>
   </div>
 
   <p style="margin-top: 2rem;">Badges com números:</p>
   <div>
-    <span class="badge badge-primary" onclick="toggleBadge(this, 'num1')">5</span>
-    <span class="badge badge-success" onclick="toggleBadge(this, 'num2')">12</span>
-    <span class="badge badge-danger" onclick="toggleBadge(this, 'num3')">3</span>
+    <span class="badge badge-primary">5</span>
+    <span class="badge badge-success">12</span>
+    <span class="badge badge-danger">3</span>
   </div>
 
-  <script>
-    function toggleBadge(element, id) {
-      element.classList.toggle('active');
-      updateBadgeInfo();
-    }
-
-    function toggleBadges() {
-      const badges = document.querySelectorAll('.badge');
-      badges.forEach(b => b.classList.toggle('active'));
-      updateBadgeInfo();
-    }
-
-    function updateBadgeInfo() {
-      const activeBadges = document.querySelectorAll('.badge.active').length;
-      const totalBadges = document.querySelectorAll('.badge').length;
-      document.getElementById('badgeInfo').innerHTML = `<p><strong>Estado:</strong> ${activeBadges} de ${totalBadges} badges ativos</p>`;
-    }
-  </script>
 </body>
 </html>

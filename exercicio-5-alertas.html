@@ -16,9 +16,6 @@
       margin: 1rem 0;
       border-left: 4px solid;
       border-radius: 4px;
-      display: none;
-    }
-    .alert.show {
       display: block;
       animation: slideIn 0.3s ease;
     }
@@ -76,43 +73,21 @@
 <body>
   <h1>Exercício 5 - Alertas</h1>
 
-  <div style="margin-bottom: 2rem;">
-    <button class="btn" onclick="showAlert('primary')">Mostrar Informação</button>
-    <button class="btn" onclick="showAlert('success')">Mostrar Sucesso</button>
-    <button class="btn" onclick="showAlert('warning')">Mostrar Aviso</button>
-    <button class="btn" onclick="showAlert('danger')">Mostrar Erro</button>
-  </div>
-
   <div id="primaryAlert" class="alert alert-primary">
-    <button class="close-btn" onclick="closeAlert('primary')">✕</button>
     <strong>ℹ️ Informação:</strong> Este é um alerta informativo com destaque visual.
   </div>
 
   <div id="successAlert" class="alert alert-success">
-    <button class="close-btn" onclick="closeAlert('success')">✕</button>
     <strong>✓ Sucesso:</strong> A operação foi concluída com sucesso.
   </div>
 
   <div id="warningAlert" class="alert alert-warning">
-    <button class="close-btn" onclick="closeAlert('warning')">✕</button>
     <strong>⚠️ Aviso:</strong> Tenha cuidado com esta ação, ela pode ter consequências.
   </div>
 
   <div id="dangerAlert" class="alert alert-danger">
-    <button class="close-btn" onclick="closeAlert('danger')">✕</button>
     <strong>✕ Erro:</strong> Ocorreu um erro ao processar a sua solicitação.
   </div>
 
-  <script>
-    function showAlert(type) {
-      const alert = document.getElementById(type + 'Alert');
-      alert.classList.add('show');
-    }
-
-    function closeAlert(type) {
-      const alert = document.getElementById(type + 'Alert');
-      alert.classList.remove('show');
-    }
-  </script>
 </body>
 </html>

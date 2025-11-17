@@ -66,7 +66,7 @@
     .page-section {
       display: none;
     }
-    .page-section.active {
+    .page-section:target {
       display: block;
       animation: fadeIn 0.3s ease;
     }
@@ -96,12 +96,12 @@
 </head>
 <body>
   <nav>
-    <a href="#" class="navbar-brand" onclick="navigatePage('home', event)">InfoAlunos</a>
+    <a href="#" class="navbar-brand">InfoAlunos</a>
     <ul class="navbar-menu">
-      <li><a onclick="navigatePage('inicio', event)" class="active" id="navInicio">Início</a></li>
-      <li><a onclick="navigatePage('servicos', event)" id="navServicos">Serviços</a></li>
-      <li><a onclick="navigatePage('pagamentos', event)" id="navPagamentos">Pagamentos</a></li>
-      <li><a onclick="navigatePage('contacto', event)" id="navContacto">Contacto</a></li>
+      <li><a href="#inicio" class="active">Início</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#pagamentos">Pagamentos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
     </ul>
   </nav>
 
@@ -110,60 +110,25 @@
       <h2>Bem-vindo ao InfoAlunos</h2>
       <p>Esta é a página inicial. Navegue através do menu acima para ver as diferentes páginas da aplicação.</p>
       <div class="info-box">
-        <p><strong>Página Atual:</strong> Início</p>
+        <p><strong>Navbar:</strong> Componente de navegação principal</p>
       </div>
     </div>
 
     <div class="page-section" id="servicos">
       <h2>Serviços</h2>
       <p>Aqui estão os serviços disponíveis para os alunos. Pode aceder a pagamentos, horários, notas, e muito mais.</p>
-      <div class="info-box">
-        <p><strong>Página Atual:</strong> Serviços</p>
-      </div>
     </div>
 
     <div class="page-section" id="pagamentos">
       <h2>Pagamentos</h2>
       <p>Gestione os seus pagamentos aqui. Pode visualizar o histórico, fazer pagamentos pendentes e descarregar recibos.</p>
-      <div class="info-box">
-        <p><strong>Página Atual:</strong> Pagamentos</p>
-      </div>
     </div>
 
     <div class="page-section" id="contacto">
       <h2>Contacto</h2>
       <p>Entre em contacto connosco para esclarecimentos ou sugestões. Responderemos à sua mensagem no mais breve espaço de tempo possível.</p>
-      <div class="info-box">
-        <p><strong>Página Atual:</strong> Contacto</p>
-      </div>
     </div>
   </div>
 
-  <script>
-    function navigatePage(pageId, event) {
-      event.preventDefault();
-      
-      // Esconde todas as seções
-      document.querySelectorAll('.page-section').forEach(section => {
-        section.classList.remove('active');
-      });
-      
-      // Remove active de todos os links
-      document.querySelectorAll('.navbar-menu a').forEach(link => {
-        link.classList.remove('active');
-      });
-      
-      // Mostra a seção selecionada
-      const section = document.getElementById(pageId);
-      if (section) {
-        section.classList.add('active');
-      }
-      
-      // Adiciona active ao link clicado
-      if (pageId !== 'home') {
-        document.getElementById('nav' + pageId.charAt(0).toUpperCase() + pageId.slice(1)).classList.add('active');
-      }
-    }
-  </script>
 </body>
 </html>

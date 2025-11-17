@@ -10,49 +10,64 @@
       margin: 2rem;
       max-width: 600px;
     }
-    /* 20. Tooltip */
-    .tooltip-container {
-      position: relative;
-      display: inline-block;
-      border-bottom: 1px dotted #1a5490;
-      cursor: help;
+
+    h1 {
       color: #1a5490;
+    }
+
+    p {
+      margin-bottom: 2rem;
+    }
+
+    /* 20. Tooltip */
+    .tooltip-btn {
+      position: relative;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid #1a5490;
+      background-color: #fff;
+      color: #1a5490;
+      border-radius: 20px;
+      cursor: pointer;
       font-weight: bold;
       transition: all 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
     }
-    .tooltip-container:hover {
-      color: #0e3558;
+
+    .tooltip-btn:hover {
+      background-color: #f0f8ff;
     }
+
+    .tooltip-btn-primary {
+      background-color: #2196F3;
+      color: #fff;
+      border-color: #2196F3;
+    }
+
+    .tooltip-btn-primary:hover {
+      background-color: #0b7dda;
+    }
+
     .tooltip-text {
       visibility: hidden;
-      background-color: #1a5490;
+      background-color: #2196F3;
       color: #fff;
       text-align: center;
-      padding: 0.5rem;
+      padding: 0.75rem 1rem;
       border-radius: 4px;
       position: absolute;
       z-index: 1;
       bottom: 125%;
       left: 50%;
-      margin-left: -60px;
-      width: 120px;
+      transform: translateX(-50%);
+      white-space: nowrap;
       opacity: 0;
       transition: opacity 0.3s;
-      font-size: 0.85rem;
-      font-weight: normal;
+      font-size: 0.9rem;
+      font-weight: 500;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-      animation: tooltipFadeIn 0.3s ease;
     }
-    @keyframes tooltipFadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(5px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+
     .tooltip-text::after {
       content: "";
       position: absolute;
@@ -61,133 +76,38 @@
       margin-left: -5px;
       border-width: 5px;
       border-style: solid;
-      border-color: #1a5490 transparent transparent transparent;
+      border-color: #2196F3 transparent transparent transparent;
     }
-    .tooltip-container:hover .tooltip-text {
+
+    .tooltip-btn:hover .tooltip-text {
       visibility: visible;
       opacity: 1;
     }
 
-    .btn {
-      padding: 0.75rem 1.5rem;
-      background-color: #1a5490;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-      margin: 2rem 0 1rem 0;
-      transition: all 0.3s ease;
-    }
-    .btn:hover {
-      background-color: #0e3558;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3);
-    }
-
-    .info-box {
-      padding: 1rem;
-      background-color: #f5f5f5;
-      border-radius: 4px;
-      border-left: 4px solid #1a5490;
-      margin: 1rem 0;
-    }
-
-    .examples-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
       margin-top: 2rem;
-    }
-
-    .example-block {
-      padding: 1.5rem;
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-    }
-
-    .example-block h3 {
-      color: #1a5490;
-      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
   <h1>Exercício 20 - Tooltip</h1>
 
-  <button class="btn" onclick="addMoreTooltips()">Adicionar Mais Tooltips</button>
+  <p><strong>Resultado:</strong></p>
 
-  <div class="info-box">
-    <p><strong>Dica:</strong> Passe o mouse sobre os termos destacados em azul para ver os tooltips explicativos.</p>
+  <div class="button-group">
+    <button class="tooltip-btn">
+      Informação
+      <span class="tooltip-text">Mais informações aqui</span>
+    </button>
+    <button class="tooltip-btn tooltip-btn-primary">
+      Lorem ipsum dolor sit amet
+      <span class="tooltip-text">Conteúdo do tooltip</span>
+    </button>
   </div>
 
-  <div class="examples-section">
-    <div class="example-block">
-      <h3>Tooltips Básicos</h3>
-      <p>
-        Este é um 
-        <div class="tooltip-container">
-          tooltip
-          <span class="tooltip-text">Dica flutuante sobre um elemento</span>
-        </div>
-        simples. Passe o mouse para ver a explicação.
-      </p>
-    </div>
-
-    <div class="example-block">
-      <h3>Tooltips Úteis</h3>
-      <p>
-        Saiba mais sobre 
-        <div class="tooltip-container">
-          HTML
-          <span class="tooltip-text">Linguagem de marcação para web</span>
-        </div>
-        e
-        <div class="tooltip-container">
-          CSS
-          <span class="tooltip-text">Folhas de estilo em cascata</span>
-        </div>
-      </p>
-    </div>
-  </div>
-
-  <h3 style="margin-top: 2rem;">Mais Tooltips Funcionais</h3>
-  <p style="line-height: 2.5;">
-    <div class="tooltip-container">
-      Informação 1
-      <span class="tooltip-text">Este é um tooltip informativo</span>
-    </div>
-    <br>
-    <div class="tooltip-container">
-      Informação 2
-      <span class="tooltip-text">Dica útil sobre este elemento</span>
-    </div>
-    <br>
-    <div class="tooltip-container">
-      Informação 3
-      <span class="tooltip-text">Conteúdo adicional explicativo</span>
-    </div>
-    <br>
-    <div class="tooltip-container">
-      Informação 4
-      <span class="tooltip-text">Mais uma dica para complementar</span>
-    </div>
-  </p>
-
-  <script>
-    function addMoreTooltips() {
-      const newTooltip = document.createElement('div');
-      newTooltip.className = 'tooltip-container';
-      newTooltip.innerHTML = '<u>Novo Tooltip</u><span class="tooltip-text">Tooltip adicionado dinamicamente!</span>';
-      
-      const section = document.querySelector('.examples-section');
-      section.parentNode.insertBefore(newTooltip, section);
-      
-      setTimeout(() => {
-        newTooltip.style.animation = 'slideIn 0.3s ease';
-      }, 100);
-    }
-  </script>
 </body>
 </html>

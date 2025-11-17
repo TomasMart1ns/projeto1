@@ -10,27 +10,42 @@
       margin: 2rem;
       max-width: 600px;
     }
+    h1 {
+      color: #1a5490;
+    }
     /* 11. Formulário */
     .form-group {
       margin-bottom: 1.5rem;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-row-three {
+      display: grid;
+      grid-template-columns: 1fr 1fr 100px;
+      gap: 1rem;
     }
     label {
       display: block;
       margin-bottom: 0.5rem;
       font-weight: bold;
       color: #333;
+      font-size: 0.9rem;
     }
     input[type="text"],
     input[type="email"],
     input[type="password"],
+    input[type="number"],
     textarea,
     select {
       width: 100%;
       padding: 0.75rem;
-      border: 1px solid #ddd;
+      border: 1px solid #ccc;
       border-radius: 4px;
       font-family: inherit;
-      font-size: 1rem;
+      font-size: 0.95rem;
       transition: all 0.3s ease;
       box-sizing: border-box;
     }
@@ -43,6 +58,25 @@
     }
     textarea {
       resize: vertical;
+      min-height: 100px;
+    }
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      background-size: 1.5em 1.5em;
+      padding-right: 2.5rem;
+    }
+    input[type="checkbox"],
+    input[type="radio"] {
+      margin-right: 0.5rem;
+      cursor: pointer;
+    }
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
     .form-btn {
       padding: 0.75rem 1.5rem;
@@ -52,7 +86,7 @@
       border-radius: 4px;
       cursor: pointer;
       font-weight: bold;
-      margin-right: 0.5rem;
+      font-size: 0.95rem;
       transition: all 0.3s ease;
     }
     .form-btn:hover {
@@ -60,124 +94,70 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3);
     }
-    .form-btn-secondary {
-      background-color: #6c757d;
-    }
-    .form-btn-secondary:hover {
-      background-color: #5a6268;
-    }
-
-    .form-message {
-      padding: 1rem;
-      border-radius: 4px;
-      margin-top: 1rem;
-      display: none;
-    }
-    .form-message.success {
-      background-color: #e8f5e9;
-      color: #2e7d32;
-      border-left: 4px solid #4caf50;
-    }
-    .form-message.error {
-      background-color: #ffebee;
-      color: #c62828;
-      border-left: 4px solid #f44336;
-    }
-    .form-message.show {
-      display: block;
-    }
-
-    .form-data {
-      background-color: #f5f5f5;
-      padding: 1rem;
-      border-radius: 4px;
-      margin-top: 1rem;
-      display: none;
-    }
-    .form-data.show {
-      display: block;
-    }
   </style>
 </head>
 <body>
   <h1>Exercício 11 - Formulário</h1>
 
   <form id="myForm">
-    <div class="form-group">
-      <label for="nome">Nome:</label>
-      <input type="text" id="nome" placeholder="Seu nome" required>
+    <!-- Email e Senha em linha -->
+    <div class="form-row">
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="seu@email.com" required>
+      </div>
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="Sua senha" required>
+      </div>
     </div>
 
+    <!-- Endereço -->
     <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" id="email" placeholder="seu@email.com" required>
+      <label for="endereco">Endereço</label>
+      <input type="text" id="endereco" placeholder="1234 Rua Principal" required>
     </div>
 
+    <!-- Endereço 2 -->
     <div class="form-group">
-      <label for="mensagem">Mensagem:</label>
-      <textarea id="mensagem" rows="4" placeholder="Sua mensagem aqui..." required></textarea>
+      <label for="endereco2">Endereço 2</label>
+      <input type="text" id="endereco2" placeholder="Apartamento, estúdio ou andar inteiro">
     </div>
 
-    <div class="form-group">
-      <label for="pais">País:</label>
-      <select id="pais" required>
-        <option>Selecione um país</option>
-        <option>Portugal</option>
-        <option>Brasil</option>
-        <option>Moçambique</option>
-        <option>Angola</option>
-      </select>
+    <!-- Cidade, Estado e Zip -->
+    <div class="form-row-three">
+      <div class="form-group">
+        <label for="cidade">Cidade</label>
+        <input type="text" id="cidade" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="estado">Estado</label>
+        <select id="estado" required>
+          <option value="">Escolher...</option>
+          <option value="sp">São Paulo</option>
+          <option value="rj">Rio de Janeiro</option>
+          <option value="mg">Minas Gerais</option>
+          <option value="ba">Bahia</option>
+          <option value="rs">Rio Grande do Sul</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="zip">Zip</label>
+        <input type="text" id="zip" placeholder="">
+      </div>
     </div>
 
-    <button type="submit" class="form-btn" onclick="submitForm(event)">Enviar</button>
-    <button type="reset" class="form-btn form-btn-secondary" onclick="clearForm()">Limpar</button>
+    <!-- Checkbox -->
+    <div class="form-group checkbox-group">
+      <input type="checkbox" id="perfil" name="perfil">
+      <label for="perfil" style="margin-bottom: 0;">Confirma meu perfil</label>
+    </div>
+
+    <!-- Botão de Enviar -->
+    <div class="form-group">
+      <button type="submit" class="form-btn">Enviar</button>
+    </div>
   </form>
 
-  <div class="form-message" id="formMessage"></div>
-
-  <div class="form-data" id="formData">
-    <h3>Dados Submetidos:</h3>
-    <p><strong>Nome:</strong> <span id="displayNome"></span></p>
-    <p><strong>Email:</strong> <span id="displayEmail"></span></p>
-    <p><strong>Mensagem:</strong> <span id="displayMensagem"></span></p>
-    <p><strong>País:</strong> <span id="displayPais"></span></p>
-  </div>
-
-  <script>
-    function submitForm(e) {
-      e.preventDefault();
-      
-      const nome = document.getElementById('nome').value;
-      const email = document.getElementById('email').value;
-      const mensagem = document.getElementById('mensagem').value;
-      const pais = document.getElementById('pais').value;
-
-      if (!nome || !email || !mensagem || pais === 'Selecione um país') {
-        showMessage('Por favor, preencha todos os campos!', 'error');
-        return;
-      }
-
-      // Exibir dados
-      document.getElementById('displayNome').textContent = nome;
-      document.getElementById('displayEmail').textContent = email;
-      document.getElementById('displayMensagem').textContent = mensagem;
-      document.getElementById('displayPais').textContent = pais;
-      
-      document.getElementById('formData').classList.add('show');
-      showMessage('✓ Formulário enviado com sucesso!', 'success');
-    }
-
-    function clearForm() {
-      document.getElementById('myForm').reset();
-      document.getElementById('formData').classList.remove('show');
-      document.getElementById('formMessage').classList.remove('show');
-    }
-
-    function showMessage(message, type) {
-      const msgElement = document.getElementById('formMessage');
-      msgElement.textContent = message;
-      msgElement.className = `form-message ${type} show`;
-    }
-  </script>
 </body>
 </html>

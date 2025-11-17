@@ -15,7 +15,20 @@
       --border: #ddd;
     }
 
-    html[data-theme="dark"] {
+    #theme-toggle {
+      display: none;
+    }
+
+    /* Quando o checkbox estiver marcado, muda as variáveis */
+    #theme-toggle:checked {
+      --bg: #1a1a1a;
+      --text: #efefec;
+      --card-bg: #2d2d2d;
+      --border: #444;
+    }
+
+    /* Ou usar com um elemento que seja ancestral usando :has (mais moderno) */
+    html:has(#theme-toggle:checked) {
       --bg: #1a1a1a;
       --text: #efefec;
       --card-bg: #2d2d2d;
@@ -72,44 +85,90 @@
       border-left: 4px solid var(--cor-primaria);
       border-radius: 4px;
     }
+
+    .theme-toggle-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 2rem 0;
+      padding: 1rem;
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .toggle-label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .toggle-switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 30px;
+      margin: 0 1rem;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 30px;
+    }
+
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 22px;
+      width: 22px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    #theme-toggle:checked + .toggle-slider {
+      background-color: #1a5490;
+    }
+
+    #theme-toggle:checked + .toggle-slider:before {
+      transform: translateX(30px);
+    }
+
+    .theme-label {
+      font-weight: bold;
+      color: var(--text);
+    }
   </style>
 </head>
 <body>
   <h1>Exercício 1 - Tema Claro/Escuro</h1>
-  <p>Clique no botão abaixo para alternar entre tema claro e escuro:</p>
+  <p>Use o toggle abaixo para alternar entre tema claro e escuro:</p>
 
-  <button class="btn" onclick="toggleTheme()">Alternar Tema</button>
-
-  <div class="card">
-    <h2>Informações do Tema</h2>
-    <div class="theme-info">
-      <p><strong>Tema Atual:</strong> <span id="themeStatus">Claro</span></p>
-      <p>Use o botão acima para alternar entre tema claro e escuro.</p>
-    </div>
+  <div class="theme-toggle-container">
+    <span class="theme-label">🌙 Escuro</span>
+    <label class="toggle-switch">
+      <input type="checkbox" id="theme-toggle">
+      <span class="toggle-slider"></span>
+    </label>
+    <span class="theme-label">☀️ Claro</span>
   </div>
 
-  <script>
-    function initTheme() {
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      updateThemeStatus(savedTheme);
-    }
 
-    function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateThemeStatus(newTheme);
-    }
-
-    function updateThemeStatus(theme) {
-      const themeText = theme === 'dark' ? 'Escuro' : 'Claro';
-      document.getElementById('themeStatus').textContent = themeText;
-    }
-
-    initTheme();
-  </script>
 </body>
 </html>

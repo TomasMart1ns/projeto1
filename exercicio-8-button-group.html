@@ -3,122 +3,171 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exercício 8 - Button Group</title>
+  <title>Exercício 8 - Buttons</title>
   <style>
+    :root {
+      --cor-primaria: #1a5490;
+      --cor-secundaria: #6c757d;
+      --cor-sucesso: #4caf50;
+      --cor-aviso: #ff9800;
+      --cor-perigo: #f44336;
+      --cor-info: #2196F3;
+      --cor-light: #f8f9fa;
+      --cor-dark: #212529;
+    }
     body {
       font-family: Montserrat, system-ui, sans-serif;
       margin: 2rem;
-      max-width: 600px;
+      max-width: 800px;
     }
-    /* 8. Button Group */
-    .btn-group {
-      display: inline-flex;
-      border-radius: 4px;
-      overflow: hidden;
-      border: 1px solid #1a5490;
+    h1 {
+      color: var(--cor-primaria);
     }
-    .btn-group button {
-      padding: 0.5rem 1rem;
-      border: none;
-      background-color: #fff;
-      color: #1a5490;
-      cursor: pointer;
-      font-weight: bold;
-      transition: all 0.3s ease;
+    h2 {
+      color: #333;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
     }
-    .btn-group button:not(:last-child) {
-      border-right: 1px solid #1a5490;
-    }
-    .btn-group button:hover {
-      background-color: #e7f1f8;
-    }
-    .btn-group button.active {
-      background-color: #1a5490;
-      color: #fff;
-    }
-
-    .info-box {
-      padding: 1rem;
-      background-color: #f5f5f5;
-      border-radius: 4px;
-      border-left: 4px solid #1a5490;
-      margin: 2rem 0 1rem 0;
-    }
-
-    .group-section {
-      margin: 2rem 0;
-    }
-
-    .btn {
+    /* 8. Buttons */
+    .btn { 
       padding: 0.75rem 1.5rem;
-      background-color: #1a5490;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
+      border: none; 
+      border-radius: 6px; 
       cursor: pointer;
-      font-weight: bold;
+      font-family: Montserrat, system-ui, sans-serif;
+      font-size: 14px;
+      font-weight: 500;
       transition: all 0.3s ease;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
     }
-    .btn:hover {
+    
+    /* Botão Primário */
+    .btn-primary { 
+      background-color: var(--cor-primaria); 
+      color: #fff;
+    }
+    .btn-primary:hover {
       background-color: #0e3558;
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3);
     }
+    
+    /* Botão Secundário */
+    .btn-secondary { 
+      background-color: var(--cor-secundaria); 
+      color: #fff;
+    }
+    .btn-secondary:hover {
+      background-color: #5a6268;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(108, 117, 125, 0.3);
+    }
+
+    /* Botão Sucesso */
+    .btn-success { 
+      background-color: var(--cor-sucesso); 
+      color: #fff;
+    }
+    .btn-success:hover {
+      background-color: #45a049;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+    }
+
+    /* Botão Aviso */
+    .btn-warning { 
+      background-color: var(--cor-aviso); 
+      color: #fff;
+    }
+    .btn-warning:hover {
+      background-color: #e68900;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+    }
+
+    /* Botão Perigo */
+    .btn-danger { 
+      background-color: var(--cor-perigo); 
+      color: #fff;
+    }
+    .btn-danger:hover {
+      background-color: #da190b;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+    }
+
+    /* Botão Info */
+    .btn-info { 
+      background-color: var(--cor-info); 
+      color: #fff;
+    }
+    .btn-info:hover {
+      background-color: #0b7dda;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+    }
+
+    /* Botão Light */
+    .btn-light { 
+      background-color: var(--cor-light); 
+      color: #333;
+      border: 1px solid #ddd;
+    }
+    .btn-light:hover {
+      background-color: #e2e6ea;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(248, 249, 250, 0.3);
+    }
+
+    /* Botão Dark */
+    .btn-dark { 
+      background-color: var(--cor-dark); 
+      color: #fff;
+    }
+    .btn-dark:hover {
+      background-color: #0a0e11;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(33, 37, 41, 0.3);
+    }
+
+    /* Botão Link */
+    .btn-link { 
+      background-color: transparent;
+      color: var(--cor-primaria);
+      text-decoration: underline;
+    }
+    .btn-link:hover {
+      color: #0e3558;
+      text-decoration: underline;
+    }
+
+    /* Grupos de botões */
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
   </style>
 </head>
 <body>
-  <h1>Exercício 8 - Button Group</h1>
+  <h1>Exercício 8 - Buttons</h1>
+  <p>Sistema completo de botões com diferentes variações e estilos.</p>
 
-  <div class="group-section">
-    <h3>Grupo de Alinhamento</h3>
-    <div class="btn-group" id="alignGroup">
-      <button class="active" onclick="selectButton(this, 'alignGroup')">Esquerda</button>
-      <button onclick="selectButton(this, 'alignGroup')">Centro</button>
-      <button onclick="selectButton(this, 'alignGroup')">Direita</button>
-    </div>
-    <div class="info-box" id="alignInfo">
-      <p><strong>Selecionado:</strong> Esquerda</p>
-    </div>
+  <h2>Botões com Cores Diferentes</h2>
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+    <button type="button" class="btn btn-success">Success</button>
+    <button type="button" class="btn btn-danger">Danger</button>
+    <button type="button" class="btn btn-warning">Warning</button>
+    <button type="button" class="btn btn-info">Info</button>
+    <button type="button" class="btn btn-light">Light</button>
+    <button type="button" class="btn btn-dark">Dark</button>
+    <a href="#" class="btn btn-link">Link</a>
   </div>
 
-  <div class="group-section">
-    <h3>Grupo de Tamanho</h3>
-    <div class="btn-group" id="sizeGroup">
-      <button onclick="selectButton(this, 'sizeGroup')">Pequeno</button>
-      <button class="active" onclick="selectButton(this, 'sizeGroup')">Médio</button>
-      <button onclick="selectButton(this, 'sizeGroup')">Grande</button>
-    </div>
-    <div class="info-box" id="sizeInfo">
-      <p><strong>Selecionado:</strong> Médio</p>
-    </div>
-  </div>
-
-  <button class="btn" onclick="resetAll()">Restaurar Padrões</button>
-
-  <script>
-    function selectButton(element, groupId) {
-      const buttons = document.querySelectorAll(`#${groupId} button`);
-      buttons.forEach(btn => btn.classList.remove('active'));
-      element.classList.add('active');
-      
-      updateInfo(groupId, element.textContent);
-    }
-
-    function updateInfo(groupId, selected) {
-      const infoId = groupId === 'alignGroup' ? 'alignInfo' : 'sizeInfo';
-      document.getElementById(infoId).innerHTML = `<p><strong>Selecionado:</strong> ${selected}</p>`;
-    }
-
-    function resetAll() {
-      document.querySelectorAll('#alignGroup button').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('#sizeGroup button').forEach(b => b.classList.remove('active'));
-      
-      document.querySelectorAll('#alignGroup button')[0].classList.add('active');
-      document.querySelectorAll('#sizeGroup button')[1].classList.add('active');
-      
-      updateInfo('alignGroup', 'Esquerda');
-      updateInfo('sizeGroup', 'Médio');
-    }
-  </script>
 </body>
 </html>

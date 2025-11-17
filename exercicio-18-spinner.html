@@ -73,48 +73,20 @@
 <body>
   <h1>Exercício 18 - Spinner</h1>
 
-  <button class="btn" onclick="toggleSpinner()">Iniciar/Parar Spinner</button>
-  <button class="btn" onclick="resetSpinner()">Restaurar</button>
-
   <p>Spinner pequeno:</p>
   <div class="spinner-container">
-    <div class="spinner spinner-small" id="spinnerSmall"></div>
+    <div class="spinner spinner-small"></div>
   </div>
 
   <p>Spinner médio:</p>
   <div class="spinner-container">
-    <div class="spinner" id="spinnerMedium"></div>
+    <div class="spinner"></div>
   </div>
 
   <p>Spinner grande:</p>
   <div class="spinner-container">
-    <div class="spinner spinner-large" id="spinnerLarge"></div>
+    <div class="spinner spinner-large"></div>
   </div>
 
-  <div class="status" id="spinnerStatus">Clique em "Iniciar/Parar" para controlar o spinner</div>
-
-  <script>
-    let isRunning = true;
-
-    function toggleSpinner() {
-      const spinners = document.querySelectorAll('.spinner');
-      isRunning = !isRunning;
-
-      if (isRunning) {
-        spinners.forEach(s => s.classList.remove('stopped'));
-        document.getElementById('spinnerStatus').textContent = 'Spinner em execução...';
-      } else {
-        spinners.forEach(s => s.classList.add('stopped'));
-        document.getElementById('spinnerStatus').textContent = 'Spinner parado';
-      }
-    }
-
-    function resetSpinner() {
-      const spinners = document.querySelectorAll('.spinner');
-      spinners.forEach(s => s.classList.remove('stopped'));
-      isRunning = true;
-      document.getElementById('spinnerStatus').textContent = 'Clique em "Iniciar/Parar" para controlar o spinner';
-    }
-  </script>
 </body>
 </html>
