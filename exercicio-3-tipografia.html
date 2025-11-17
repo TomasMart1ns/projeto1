@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 3 - Tipografia</title>
+  <style>
+    body {
+      font-family: Montserrat, system-ui, sans-serif;
+      margin: 2rem;
+      max-width: 800px;
+      transition: all 0.3s ease;
+    }
+    /* 3. Tipografia */
+    h1 { 
+      font-size: 28px; 
+      font-weight: bold; 
+      color: #1E1A50;
+      transition: font-size 0.3s ease;
+    }
+    h2 { 
+      font-size: 16px; 
+      font-weight: bold; 
+      color: #1E1A50; 
+      margin-top: 2rem;
+      transition: font-size 0.3s ease;
+    }
+    h3 { 
+      font-size: 14px; 
+      font-weight: bold; 
+      color: #1A2950;
+      transition: font-size 0.3s ease;
+    }
+    p { 
+      font-size: 12px; 
+      font-weight: 500; 
+      color: #1A2950;
+      line-height: 1.6;
+      transition: font-size 0.3s ease;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background-color: #1a5490;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 2rem 0;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0e3558;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3);
+    }
+
+    .info-box {
+      padding: 1rem;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      border-left: 4px solid #1a5490;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercício 3 - Tipografia</h1>
+  
+  <button class="btn" onclick="toggleFontSize()">Alternar Tamanho de Fontes</button>
+  
+  <div class="info-box" id="sizeInfo">
+    <p><strong>Estado:</strong> Tamanho normal</p>
+  </div>
+
+  <h2>Secondary Title (H2)</h2>
+  <p>Este é um parágrafo de exemplo com tamanho de 12px.</p>
+  
+  <h3>Tertiary Title (H3)</h3>
+  <p>Este parágrafo demonstra o estilo de tipografia para o corpo de texto. A hierarquia visual é importante para a usabilidade.</p>
+  
+  <h2>Outro Título Secundário</h2>
+  <p>A tipografia adequada melhora significativamente a legibilidade e a experiência do utilizador. Este exemplo mostra a escala de tamanhos e cores utilizadas no projeto.</p>
+
+  <script>
+    let isBig = false;
+    function toggleFontSize() {
+      const h1 = document.querySelector('h1');
+      const h2s = document.querySelectorAll('h2');
+      const h3 = document.querySelector('h3');
+      const ps = document.querySelectorAll('p');
+      const info = document.getElementById('sizeInfo');
+
+      if (!isBig) {
+        h1.style.fontSize = '42px';
+        h2s.forEach(h => h.style.fontSize = '24px');
+        h3.style.fontSize = '21px';
+        ps.forEach(p => p.style.fontSize = '18px');
+        info.innerHTML = '<p><strong>Estado:</strong> Tamanho aumentado 150%</p>';
+        isBig = true;
+      } else {
+        h1.style.fontSize = '28px';
+        h2s.forEach(h => h.style.fontSize = '16px');
+        h3.style.fontSize = '14px';
+        ps.forEach(p => p.style.fontSize = '12px');
+        info.innerHTML = '<p><strong>Estado:</strong> Tamanho normal</p>';
+        isBig = false;
+      }
+    }
+  </script>
+</body>
+</html>

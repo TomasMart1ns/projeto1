@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 12 - Lista</title>
+  <style>
+    body {
+      font-family: Montserrat, system-ui, sans-serif;
+      margin: 2rem;
+      max-width: 600px;
+    }
+    /* 12. Lista */
+    .list-group {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .list-group li {
+      padding: 1rem;
+      border-bottom: 1px solid #ddd;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .list-group li:last-child {
+      border-bottom: none;
+    }
+    .list-group li:hover {
+      background-color: #f5f5f5;
+      padding-left: 1.5rem;
+    }
+    .list-group li.active {
+      background-color: #e7f1f8;
+      border-left: 4px solid #1a5490;
+      padding-left: calc(1rem - 4px);
+      font-weight: bold;
+      color: #1a5490;
+    }
+    .list-group a {
+      text-decoration: none;
+      color: #1a5490;
+    }
+    .list-group a:hover {
+      text-decoration: underline;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background-color: #1a5490;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 2rem 0 1rem 0;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0e3558;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3);
+    }
+
+    .info-box {
+      padding: 1rem;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      border-left: 4px solid #1a5490;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercício 12 - Lista</h1>
+
+  <button class="btn" onclick="resetList()">Restaurar Lista</button>
+
+  <div class="info-box" id="listInfo">
+    <p><strong>Selecionado:</strong> Nenhum item</p>
+  </div>
+
+  <ul class="list-group" id="simpleList">
+    <li onclick="selectListItem(this, 'Item 1')"><a href="#">Item da lista 1</a></li>
+    <li onclick="selectListItem(this, 'Item 2')"><a href="#">Item da lista 2</a></li>
+    <li onclick="selectListItem(this, 'Item 3')"><a href="#">Item da lista 3</a></li>
+    <li onclick="selectListItem(this, 'Item 4')"><a href="#">Item da lista 4</a></li>
+    <li onclick="selectListItem(this, 'Item 5')"><a href="#">Item da lista 5</a></li>
+  </ul>
+
+  <h3 style="margin-top: 2rem;">Lista com descrições</h3>
+  <ul class="list-group" id="descList">
+    <li onclick="selectListItem(this, 'Primeiro item')">
+      <strong>Primeiro item</strong><br>
+      <small style="color: #999;">Descrição do primeiro item</small>
+    </li>
+    <li onclick="selectListItem(this, 'Segundo item')">
+      <strong>Segundo item</strong><br>
+      <small style="color: #999;">Descrição do segundo item</small>
+    </li>
+    <li onclick="selectListItem(this, 'Terceiro item')">
+      <strong>Terceiro item</strong><br>
+      <small style="color: #999;">Descrição do terceiro item</small>
+    </li>
+  </ul>
+
+  <script>
+    function selectListItem(element, itemName) {
+      // Remove active de todos os itens das listas
+      document.querySelectorAll('.list-group li').forEach(li => li.classList.remove('active'));
+      // Adiciona active ao elemento clicado
+      element.classList.add('active');
+      // Atualiza info
+      document.getElementById('listInfo').innerHTML = `<p><strong>Selecionado:</strong> ${itemName}</p>`;
+    }
+
+    function resetList() {
+      document.querySelectorAll('.list-group li').forEach(li => li.classList.remove('active'));
+      document.getElementById('listInfo').innerHTML = '<p><strong>Selecionado:</strong> Nenhum item</p>';
+    }
+  </script>
+</body>
+</html>

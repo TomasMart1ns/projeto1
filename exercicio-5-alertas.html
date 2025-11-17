@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 5 - Alertas</title>
+  <style>
+    body {
+      font-family: Montserrat, system-ui, sans-serif;
+      margin: 2rem;
+      max-width: 600px;
+    }
+    /* 5. Alertas */
+    .alert {
+      padding: 1rem;
+      margin: 1rem 0;
+      border-left: 4px solid;
+      border-radius: 4px;
+      display: none;
+    }
+    .alert.show {
+      display: block;
+      animation: slideIn 0.3s ease;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .alert-primary {
+      background-color: #e7f1f8;
+      border-left-color: #1a5490;
+      color: #1a5490;
+    }
+    .alert-success {
+      background-color: #e8f5e9;
+      border-left-color: #4caf50;
+      color: #2e7d32;
+    }
+    .alert-warning {
+      background-color: #fff3e0;
+      border-left-color: #ff9800;
+      color: #e65100;
+    }
+    .alert-danger {
+      background-color: #ffebee;
+      border-left-color: #f44336;
+      color: #c62828;
+    }
+    .close-btn {
+      float: right;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: inherit;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background-color: #1a5490;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 0.5rem;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0e3558;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercício 5 - Alertas</h1>
+
+  <div style="margin-bottom: 2rem;">
+    <button class="btn" onclick="showAlert('primary')">Mostrar Informação</button>
+    <button class="btn" onclick="showAlert('success')">Mostrar Sucesso</button>
+    <button class="btn" onclick="showAlert('warning')">Mostrar Aviso</button>
+    <button class="btn" onclick="showAlert('danger')">Mostrar Erro</button>
+  </div>
+
+  <div id="primaryAlert" class="alert alert-primary">
+    <button class="close-btn" onclick="closeAlert('primary')">✕</button>
+    <strong>ℹ️ Informação:</strong> Este é um alerta informativo com destaque visual.
+  </div>
+
+  <div id="successAlert" class="alert alert-success">
+    <button class="close-btn" onclick="closeAlert('success')">✕</button>
+    <strong>✓ Sucesso:</strong> A operação foi concluída com sucesso.
+  </div>
+
+  <div id="warningAlert" class="alert alert-warning">
+    <button class="close-btn" onclick="closeAlert('warning')">✕</button>
+    <strong>⚠️ Aviso:</strong> Tenha cuidado com esta ação, ela pode ter consequências.
+  </div>
+
+  <div id="dangerAlert" class="alert alert-danger">
+    <button class="close-btn" onclick="closeAlert('danger')">✕</button>
+    <strong>✕ Erro:</strong> Ocorreu um erro ao processar a sua solicitação.
+  </div>
+
+  <script>
+    function showAlert(type) {
+      const alert = document.getElementById(type + 'Alert');
+      alert.classList.add('show');
+    }
+
+    function closeAlert(type) {
+      const alert = document.getElementById(type + 'Alert');
+      alert.classList.remove('show');
+    }
+  </script>
+</body>
+</html>

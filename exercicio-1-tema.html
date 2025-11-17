@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 1 - Tema Claro/Escuro</title>
+  <style>
+    /* 1. Tema claro/escuro */
+    :root {
+      --cor-primaria: #1a5490;
+      --cor-secundaria: #6c757d;
+      --bg: #fff;
+      --text: #333;
+      --card-bg: #f9f9f9;
+      --border: #ddd;
+    }
+
+    html[data-theme="dark"] {
+      --bg: #1a1a1a;
+      --text: #efefec;
+      --card-bg: #2d2d2d;
+      --border: #444;
+    }
+
+    body {
+      color: var(--text);
+      background-color: var(--bg);
+      font-family: Montserrat, system-ui, sans-serif;
+      margin: 2rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    h1 {
+      color: var(--cor-primaria);
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 2rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      margin-top: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background-color: var(--cor-primaria);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0e3558;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .theme-info {
+      margin-top: 1rem;
+      padding: 1rem;
+      background-color: rgba(26, 84, 144, 0.1);
+      border-left: 4px solid var(--cor-primaria);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercício 1 - Tema Claro/Escuro</h1>
+  <p>Clique no botão abaixo para alternar entre tema claro e escuro:</p>
+
+  <button class="btn" onclick="toggleTheme()">Alternar Tema</button>
+
+  <div class="card">
+    <h2>Informações do Tema</h2>
+    <div class="theme-info">
+      <p><strong>Tema Atual:</strong> <span id="themeStatus">Claro</span></p>
+      <p>Use o botão acima para alternar entre tema claro e escuro.</p>
+    </div>
+  </div>
+
+  <script>
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateThemeStatus(savedTheme);
+    }
+
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeStatus(newTheme);
+    }
+
+    function updateThemeStatus(theme) {
+      const themeText = theme === 'dark' ? 'Escuro' : 'Claro';
+      document.getElementById('themeStatus').textContent = themeText;
+    }
+
+    initTheme();
+  </script>
+</body>
+</html>

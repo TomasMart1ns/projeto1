@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 17 - Progress</title>
+  <style>
+    body {
+      font-family: Montserrat, system-ui, sans-serif;
+      margin: 2rem;
+      max-width: 600px;
+    }
+    /* 17. Progress */
+    .progress-container {
+      margin: 2rem 0;
+    }
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #333;
+    }
+    progress {
+      width: 100%;
+      height: 20px;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    progress::-webkit-progress-bar {
+      background-color: #f0f0f0;
+    }
+    progress::-webkit-progress-value {
+      background-color: #1a5490;
+      transition: width 0.5s ease;
+    }
+    progress::-moz-progress-bar {
+      background-color: #1a5490;
+      transition: width 0.5s ease;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background-color: #1a5490;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 0.5rem;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0e3558;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercício 17 - Progress</h1>
+
+  <button class="btn" onclick="simulateProgress()">Simular Download</button>
+  <button class="btn" onclick="resetProgress()">Restaurar</button>
+
+  <div class="progress-container">
+    <div class="progress-label">
+      <span>Download</span>
+      <span id="percent1">0%</span>
+    </div>
+    <progress id="prog1" value="0" max="100"></progress>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-label">
+      <span>Processamento</span>
+      <span id="percent2">0%</span>
+    </div>
+    <progress id="prog2" value="0" max="100"></progress>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-label">
+      <span>Upload</span>
+      <span id="percent3">0%</span>
+    </div>
+    <progress id="prog3" value="0" max="100"></progress>
+  </div>
+
+  <div class="progress-container">
+    <div class="progress-label">
+      <span>Conclusão</span>
+      <span id="percent4">0%</span>
+    </div>
+    <progress id="prog4" value="0" max="100"></progress>
+  </div>
+
+  <script>
+    function simulateProgress() {
+      let value = 0;
+      const interval = setInterval(() => {
+        if (value >= 100) {
+          clearInterval(interval);
+          return;
+        }
+        value += Math.random() * 30;
+        if (value > 100) value = 100;
+        
+        updateProgress(value);
+      }, 500);
+    }
+
+    function updateProgress(value) {
+      const roundValue = Math.round(value);
+      document.getElementById('prog1').value = roundValue;
+      document.getElementById('prog2').value = roundValue * 0.8;
+      document.getElementById('prog3').value = roundValue * 0.6;
+      document.getElementById('prog4').value = roundValue * 0.4;
+      
+      document.getElementById('percent1').textContent = roundValue + '%';
+      document.getElementById('percent2').textContent = Math.round(roundValue * 0.8) + '%';
+      document.getElementById('percent3').textContent = Math.round(roundValue * 0.6) + '%';
+      document.getElementById('percent4').textContent = Math.round(roundValue * 0.4) + '%';
+    }
+
+    function resetProgress() {
+      updateProgress(0);
+    }
+  </script>
+</body>
+</html>

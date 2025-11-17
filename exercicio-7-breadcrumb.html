@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 7 - Breadcrumb</title>
+  <style>
+    body {
+      font-family: Montserrat, system-ui, sans-serif;
+      margin: 2rem;
+      max-width: 600px;
+    }
+    /* 7. Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+      gap: 0.5rem;
+    }
+    .breadcrumb li::after {
+      content: "/";
+      margin-left: 0.5rem;
+      color: #999;
+    }
+    .breadcrumb li:last-child::after {
+      content: "";
+    }
+    .breadcrumb a {
+      color: #1a5490;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .breadcrumb a:hover {
+      text-decoration: underline;
+      color: #0e3558;
+    }
+    .breadcrumb .active {
+      color: #6c757d;
+      cursor: default;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background-color: #1a5490;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 2rem 0 1rem 0;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0e3558;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3);
+    }
+
+    .info-box {
+      padding: 1rem;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      border-left: 4px solid #1a5490;
+      margin: 1rem 0;
+    }
+
+    .breadcrumb-path {
+      font-weight: bold;
+      color: #1a5490;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercício 7 - Breadcrumb</h1>
+
+  <button class="btn" onclick="navigateBreadcrumb('home')">Ir para Home</button>
+  <button class="btn" onclick="navigateBreadcrumb('services')">Ir para Serviços</button>
+  <button class="btn" onclick="navigateBreadcrumb('payments')">Ir para Pagamentos</button>
+
+  <div class="info-box">
+    <p><strong>Caminho Atual:</strong> <span class="breadcrumb-path" id="currentPath">Home</span></p>
+  </div>
+
+  <ul class="breadcrumb" id="breadcrumb1">
+    <li><a onclick="navigateBreadcrumb('home')">Home</a></li>
+    <li><a onclick="navigateBreadcrumb('services')">Serviços</a></li>
+    <li><a onclick="navigateBreadcrumb('payments')">Pagamentos</a></li>
+    <li class="active" id="bc1Active">Histórico</li>
+  </ul>
+
+  <ul class="breadcrumb" id="breadcrumb2">
+    <li><a onclick="navigateBreadcrumb('home')">Dashboard</a></li>
+    <li><a onclick="navigateBreadcrumb('users')">Usuários</a></li>
+    <li class="active" id="bc2Active">Editar Perfil</li>
+  </ul>
+
+  <script>
+    const paths = {
+      'home': 'Home',
+      'services': 'Home > Serviços',
+      'payments': 'Home > Serviços > Pagamentos',
+      'users': 'Dashboard > Usuários'
+    };
+
+    function navigateBreadcrumb(path) {
+      document.getElementById('currentPath').textContent = paths[path] || 'Home';
+    }
+  </script>
+</body>
+</html>

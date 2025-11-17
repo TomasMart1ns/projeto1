@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 9 - Card</title>
+  <style>
+    body {
+      font-family: Montserrat, system-ui, sans-serif;
+      margin: 2rem;
+      max-width: 600px;
+    }
+    /* 9. Card */
+    .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transform: translateY(-4px);
+    }
+    .card.selected {
+      border-color: #1a5490;
+      box-shadow: 0 0 12px rgba(26, 84, 144, 0.3);
+      background-color: #f0f8ff;
+    }
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin: 0 0 0.5rem 0;
+      color: #1a5490;
+    }
+    .card-text {
+      color: #666;
+      margin: 0.5rem 0;
+    }
+    .card-badge {
+      display: inline-block;
+      background-color: #1a5490;
+      color: #fff;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background-color: #1a5490;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 2rem 0 1rem 0;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0e3558;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3);
+    }
+
+    .info-box {
+      padding: 1rem;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      border-left: 4px solid #1a5490;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercício 9 - Card</h1>
+
+  <button class="btn" onclick="resetCards()">Restaurar Cartões</button>
+
+  <div class="info-box" id="cardInfo">
+    <p><strong>Estado:</strong> Nenhum cartão selecionado. Clique nos cartões para selecioná-los.</p>
+  </div>
+
+  <div class="card" onclick="toggleCard(this, 'Card 1')">
+    <h3 class="card-title">Cartão 1</h3>
+    <p class="card-text">Este é um exemplo de cartão simples com título e conteúdo.</p>
+    <span class="card-badge">Clicável</span>
+  </div>
+
+  <div class="card" onclick="toggleCard(this, 'Card 2')">
+    <h3 class="card-title">Cartão 2</h3>
+    <p class="card-text">Os cartões são componentes versáteis para organizar informações em blocos distintos.</p>
+    <span class="card-badge">Clicável</span>
+  </div>
+
+  <div class="card" onclick="toggleCard(this, 'Card 3')">
+    <h3 class="card-title">Cartão 3</h3>
+    <p class="card-text">Podem ser utilizados em grids para criar layouts estruturados e responsivos.</p>
+    <span class="card-badge">Clicável</span>
+  </div>
+
+  <script>
+    function toggleCard(element, cardName) {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => card.classList.remove('selected'));
+      element.classList.add('selected');
+      updateCardInfo(cardName);
+    }
+
+    function updateCardInfo(cardName) {
+      const info = document.getElementById('cardInfo');
+      info.innerHTML = `<p><strong>Estado:</strong> ${cardName} selecionado</p>`;
+    }
+
+    function resetCards() {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => card.classList.remove('selected'));
+      document.getElementById('cardInfo').innerHTML = '<p><strong>Estado:</strong> Nenhum cartão selecionado. Clique nos cartões para selecioná-los.</p>';
+    }
+  </script>
+</body>
+</html>

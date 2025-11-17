@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 8 - Button Group</title>
+  <style>
+    body {
+      font-family: Montserrat, system-ui, sans-serif;
+      margin: 2rem;
+      max-width: 600px;
+    }
+    /* 8. Button Group */
+    .btn-group {
+      display: inline-flex;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid #1a5490;
+    }
+    .btn-group button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: #fff;
+      color: #1a5490;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .btn-group button:not(:last-child) {
+      border-right: 1px solid #1a5490;
+    }
+    .btn-group button:hover {
+      background-color: #e7f1f8;
+    }
+    .btn-group button.active {
+      background-color: #1a5490;
+      color: #fff;
+    }
+
+    .info-box {
+      padding: 1rem;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      border-left: 4px solid #1a5490;
+      margin: 2rem 0 1rem 0;
+    }
+
+    .group-section {
+      margin: 2rem 0;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background-color: #1a5490;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0e3558;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercício 8 - Button Group</h1>
+
+  <div class="group-section">
+    <h3>Grupo de Alinhamento</h3>
+    <div class="btn-group" id="alignGroup">
+      <button class="active" onclick="selectButton(this, 'alignGroup')">Esquerda</button>
+      <button onclick="selectButton(this, 'alignGroup')">Centro</button>
+      <button onclick="selectButton(this, 'alignGroup')">Direita</button>
+    </div>
+    <div class="info-box" id="alignInfo">
+      <p><strong>Selecionado:</strong> Esquerda</p>
+    </div>
+  </div>
+
+  <div class="group-section">
+    <h3>Grupo de Tamanho</h3>
+    <div class="btn-group" id="sizeGroup">
+      <button onclick="selectButton(this, 'sizeGroup')">Pequeno</button>
+      <button class="active" onclick="selectButton(this, 'sizeGroup')">Médio</button>
+      <button onclick="selectButton(this, 'sizeGroup')">Grande</button>
+    </div>
+    <div class="info-box" id="sizeInfo">
+      <p><strong>Selecionado:</strong> Médio</p>
+    </div>
+  </div>
+
+  <button class="btn" onclick="resetAll()">Restaurar Padrões</button>
+
+  <script>
+    function selectButton(element, groupId) {
+      const buttons = document.querySelectorAll(`#${groupId} button`);
+      buttons.forEach(btn => btn.classList.remove('active'));
+      element.classList.add('active');
+      
+      updateInfo(groupId, element.textContent);
+    }
+
+    function updateInfo(groupId, selected) {
+      const infoId = groupId === 'alignGroup' ? 'alignInfo' : 'sizeInfo';
+      document.getElementById(infoId).innerHTML = `<p><strong>Selecionado:</strong> ${selected}</p>`;
+    }
+
+    function resetAll() {
+      document.querySelectorAll('#alignGroup button').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('#sizeGroup button').forEach(b => b.classList.remove('active'));
+      
+      document.querySelectorAll('#alignGroup button')[0].classList.add('active');
+      document.querySelectorAll('#sizeGroup button')[1].classList.add('active');
+      
+      updateInfo('alignGroup', 'Esquerda');
+      updateInfo('sizeGroup', 'Médio');
+    }
+  </script>
+</body>
+</html>

@@ -18,6 +18,10 @@
       cursor: help;
       color: #1a5490;
       font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .tooltip-container:hover {
+      color: #0e3558;
     }
     .tooltip-text {
       visibility: hidden;
@@ -36,6 +40,18 @@
       transition: opacity 0.3s;
       font-size: 0.85rem;
       font-weight: normal;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      animation: tooltipFadeIn 0.3s ease;
+    }
+    @keyframes tooltipFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     .tooltip-text::after {
       content: "";
@@ -51,30 +67,127 @@
       visibility: visible;
       opacity: 1;
     }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background-color: #1a5490;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 2rem 0 1rem 0;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0e3558;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3);
+    }
+
+    .info-box {
+      padding: 1rem;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      border-left: 4px solid #1a5490;
+      margin: 1rem 0;
+    }
+
+    .examples-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .example-block {
+      padding: 1.5rem;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    .example-block h3 {
+      color: #1a5490;
+      margin-bottom: 1rem;
+    }
   </style>
 </head>
 <body>
   <h1>Exercício 20 - Tooltip</h1>
 
-  <p>Passe o mouse sobre os elementos destacados para ver o tooltip:</p>
+  <button class="btn" onclick="addMoreTooltips()">Adicionar Mais Tooltips</button>
 
-  <div style="margin-top: 2rem; line-height: 2;">
+  <div class="info-box">
+    <p><strong>Dica:</strong> Passe o mouse sobre os termos destacados em azul para ver os tooltips explicativos.</p>
+  </div>
+
+  <div class="examples-section">
+    <div class="example-block">
+      <h3>Tooltips Básicos</h3>
+      <p>
+        Este é um 
+        <div class="tooltip-container">
+          tooltip
+          <span class="tooltip-text">Dica flutuante sobre um elemento</span>
+        </div>
+        simples. Passe o mouse para ver a explicação.
+      </p>
+    </div>
+
+    <div class="example-block">
+      <h3>Tooltips Úteis</h3>
+      <p>
+        Saiba mais sobre 
+        <div class="tooltip-container">
+          HTML
+          <span class="tooltip-text">Linguagem de marcação para web</span>
+        </div>
+        e
+        <div class="tooltip-container">
+          CSS
+          <span class="tooltip-text">Folhas de estilo em cascata</span>
+        </div>
+      </p>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 2rem;">Mais Tooltips Funcionais</h3>
+  <p style="line-height: 2.5;">
     <div class="tooltip-container">
       Informação 1
       <span class="tooltip-text">Este é um tooltip informativo</span>
     </div>
-
+    <br>
     <div class="tooltip-container">
       Informação 2
       <span class="tooltip-text">Dica útil sobre este elemento</span>
     </div>
-
+    <br>
     <div class="tooltip-container">
       Informação 3
       <span class="tooltip-text">Conteúdo adicional explicativo</span>
     </div>
-  </div>
+    <br>
+    <div class="tooltip-container">
+      Informação 4
+      <span class="tooltip-text">Mais uma dica para complementar</span>
+    </div>
+  </p>
 
-  <p style="margin-top: 2rem;">Os tooltips aparecem quando passas o mouse sobre os termos destacados.</p>
+  <script>
+    function addMoreTooltips() {
+      const newTooltip = document.createElement('div');
+      newTooltip.className = 'tooltip-container';
+      newTooltip.innerHTML = '<u>Novo Tooltip</u><span class="tooltip-text">Tooltip adicionado dinamicamente!</span>';
+      
+      const section = document.querySelector('.examples-section');
+      section.parentNode.insertBefore(newTooltip, section);
+      
+      setTimeout(() => {
+        newTooltip.style.animation = 'slideIn 0.3s ease';
+      }, 100);
+    }
+  </script>
 </body>
 </html>

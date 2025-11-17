@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 6 - Badge</title>
+  <style>
+    body {
+      font-family: Montserrat, system-ui, sans-serif;
+      margin: 2rem;
+      max-width: 600px;
+    }
+    /* 6. Badge */
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      margin: 0.5rem;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .badge:hover {
+      transform: scale(1.1);
+    }
+    .badge-primary {
+      background-color: #1a5490;
+      color: #fff;
+    }
+    .badge-secondary {
+      background-color: #6c757d;
+      color: #fff;
+    }
+    .badge-success {
+      background-color: #4caf50;
+      color: #fff;
+    }
+    .badge-danger {
+      background-color: #f44336;
+      color: #fff;
+    }
+    .badge.active {
+      box-shadow: 0 0 12px currentColor;
+      transform: scale(1.15);
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background-color: #1a5490;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 2rem 0 1rem 0;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0e3558;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3);
+    }
+
+    .info-box {
+      padding: 1rem;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      border-left: 4px solid #1a5490;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercício 6 - Badge</h1>
+
+  <button class="btn" onclick="toggleBadges()">Alternar Estado dos Badges</button>
+
+  <div class="info-box" id="badgeInfo">
+    <p><strong>Estado:</strong> Clique nos badges ou no botão acima para alternar</p>
+  </div>
+
+  <p>
+    Clique nos badges para ativar/desativar:
+  </p>
+
+  <div>
+    <span class="badge badge-primary" onclick="toggleBadge(this, 'badge1')">Primary</span>
+    <span class="badge badge-secondary" onclick="toggleBadge(this, 'badge2')">Secondary</span>
+    <span class="badge badge-success" onclick="toggleBadge(this, 'badge3')">Success</span>
+    <span class="badge badge-danger" onclick="toggleBadge(this, 'badge4')">Danger</span>
+  </div>
+
+  <p style="margin-top: 2rem;">Badges com números:</p>
+  <div>
+    <span class="badge badge-primary" onclick="toggleBadge(this, 'num1')">5</span>
+    <span class="badge badge-success" onclick="toggleBadge(this, 'num2')">12</span>
+    <span class="badge badge-danger" onclick="toggleBadge(this, 'num3')">3</span>
+  </div>
+
+  <script>
+    function toggleBadge(element, id) {
+      element.classList.toggle('active');
+      updateBadgeInfo();
+    }
+
+    function toggleBadges() {
+      const badges = document.querySelectorAll('.badge');
+      badges.forEach(b => b.classList.toggle('active'));
+      updateBadgeInfo();
+    }
+
+    function updateBadgeInfo() {
+      const activeBadges = document.querySelectorAll('.badge.active').length;
+      const totalBadges = document.querySelectorAll('.badge').length;
+      document.getElementById('badgeInfo').innerHTML = `<p><strong>Estado:</strong> ${activeBadges} de ${totalBadges} badges ativos</p>`;
+    }
+  </script>
+</body>
+</html>

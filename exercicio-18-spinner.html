@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 18 - Spinner</title>
+  <style>
+    body {
+      font-family: Montserrat, system-ui, sans-serif;
+      margin: 2rem;
+      max-width: 600px;
+    }
+    /* 18. Spinner */
+    .spinner-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 2rem 0;
+      min-height: 80px;
+    }
+    .spinner {
+      border: 4px solid #f0f0f0;
+      border-top: 4px solid #1a5490;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .spinner-small {
+      width: 20px;
+      height: 20px;
+      border-width: 2px;
+    }
+    .spinner-large {
+      width: 60px;
+      height: 60px;
+      border-width: 5px;
+    }
+    .spinner.stopped {
+      animation: none;
+      border-top-color: #ccc;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background-color: #1a5490;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 0.5rem;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0e3558;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3);
+    }
+
+    .status {
+      text-align: center;
+      margin: 1rem 0;
+      font-weight: bold;
+      color: #1a5490;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercício 18 - Spinner</h1>
+
+  <button class="btn" onclick="toggleSpinner()">Iniciar/Parar Spinner</button>
+  <button class="btn" onclick="resetSpinner()">Restaurar</button>
+
+  <p>Spinner pequeno:</p>
+  <div class="spinner-container">
+    <div class="spinner spinner-small" id="spinnerSmall"></div>
+  </div>
+
+  <p>Spinner médio:</p>
+  <div class="spinner-container">
+    <div class="spinner" id="spinnerMedium"></div>
+  </div>
+
+  <p>Spinner grande:</p>
+  <div class="spinner-container">
+    <div class="spinner spinner-large" id="spinnerLarge"></div>
+  </div>
+
+  <div class="status" id="spinnerStatus">Clique em "Iniciar/Parar" para controlar o spinner</div>
+
+  <script>
+    let isRunning = true;
+
+    function toggleSpinner() {
+      const spinners = document.querySelectorAll('.spinner');
+      isRunning = !isRunning;
+
+      if (isRunning) {
+        spinners.forEach(s => s.classList.remove('stopped'));
+        document.getElementById('spinnerStatus').textContent = 'Spinner em execução...';
+      } else {
+        spinners.forEach(s => s.classList.add('stopped'));
+        document.getElementById('spinnerStatus').textContent = 'Spinner parado';
+      }
+    }
+
+    function resetSpinner() {
+      const spinners = document.querySelectorAll('.spinner');
+      spinners.forEach(s => s.classList.remove('stopped'));
+      isRunning = true;
+      document.getElementById('spinnerStatus').textContent = 'Clique em "Iniciar/Parar" para controlar o spinner';
+    }
+  </script>
+</body>
+</html>

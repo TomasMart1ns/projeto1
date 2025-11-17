@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 4 - Accordion</title>
+  <style>
+    body {
+      font-family: Montserrat, system-ui, sans-serif;
+      margin: 2rem;
+      max-width: 600px;
+    }
+    /* 4. Accordion */
+    details { 
+      margin: 1rem 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 1rem;
+      transition: all 0.3s ease;
+    }
+    details:hover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    summary { 
+      cursor: pointer; 
+      font-weight: bold;
+      padding: 0.5rem;
+      background-color: #f5f5f5;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+    summary:hover {
+      background-color: #e7f1f8;
+      color: #1a5490;
+    }
+    details > p {
+      margin: 1rem 0 0 0;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background-color: #1a5490;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 2rem 0;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0e3558;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3);
+    }
+
+    .info-box {
+      padding: 1rem;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      border-left: 4px solid #1a5490;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercício 4 - Accordion</h1>
+  <p>Clique nos itens para expandir/colapsar o conteúdo:</p>
+
+  <button class="btn" onclick="toggleAllAccordions()">Expandir/Colapsar Todos</button>
+
+  <div class="info-box" id="accordionInfo">
+    <p><strong>Estado:</strong> Todos fechados</p>
+  </div>
+
+  <details id="acc1" onchange="updateAccordionInfo()">
+    <summary>Accordion Item #1</summary>
+    <p>Este é o conteúdo do primeiro item. Pode conter qualquer tipo de HTML e texto.</p>
+  </details>
+
+  <details id="acc2" onchange="updateAccordionInfo()">
+    <summary>Accordion Item #2</summary>
+    <p>Este é o conteúdo do segundo item. Os accordions são úteis para organizar conteúdo em espaços pequenos.</p>
+  </details>
+
+  <details id="acc3" onchange="updateAccordionInfo()">
+    <summary>Accordion Item #3</summary>
+    <p>Este é o conteúdo do terceiro item. Use accordions quando quiser poupar espaço na página.</p>
+  </details>
+
+  <script>
+    let allOpen = false;
+
+    function toggleAllAccordions() {
+      const details = document.querySelectorAll('details');
+      allOpen = !allOpen;
+      details.forEach(d => d.open = allOpen);
+      updateAccordionInfo();
+    }
+
+    function updateAccordionInfo() {
+      const details = document.querySelectorAll('details');
+      const openCount = Array.from(details).filter(d => d.open).length;
+      const info = document.getElementById('accordionInfo');
+      info.innerHTML = `<p><strong>Estado:</strong> ${openCount} de ${details.length} itens abertos</p>`;
+    }
+  </script>
+</body>
+</html>

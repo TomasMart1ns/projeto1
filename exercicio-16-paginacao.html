@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 16 - Paginação</title>
+  <style>
+    body {
+      font-family: Montserrat, system-ui, sans-serif;
+      margin: 2rem;
+      max-width: 600px;
+    }
+    /* 16. Paginação */
+    .pagination {
+      display: flex;
+      list-style: none;
+      gap: 0.5rem;
+      justify-content: center;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    .pagination a,
+    .pagination span {
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      text-decoration: none;
+      color: #1a5490;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .pagination a:hover {
+      background-color: #1a5490;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .pagination .active {
+      background-color: #1a5490;
+      color: #fff;
+      border-color: #1a5490;
+      font-weight: bold;
+    }
+    .pagination .disabled {
+      color: #ccc;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background-color: #1a5490;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 2rem 0 1rem 0;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0e3558;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3);
+    }
+
+    .info-box {
+      padding: 1rem;
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      border-left: 4px solid #1a5490;
+      margin: 1rem 0;
+    }
+
+    .content-area {
+      padding: 2rem;
+      background-color: #f9f9f9;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      margin: 1rem 0;
+      min-height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercício 16 - Paginação</h1>
+
+  <div class="content-area" id="contentArea">
+    <h3 id="pageTitle">Página 1</h3>
+    <p id="pageContent">Conteúdo da página 1. Este é um exemplo de paginação funcional.</p>
+  </div>
+
+  <div class="info-box" id="pageInfo">
+    <p><strong>Página Atual:</strong> 1 de 5</p>
+  </div>
+
+  <ul class="pagination" id="paginationControls">
+    <li><a onclick="changePage(0)">← Anterior</a></li>
+    <li><a onclick="changePage(1)" class="active" id="page1">1</a></li>
+    <li><a onclick="changePage(2)" id="page2">2</a></li>
+    <li><a onclick="changePage(3)" id="page3">3</a></li>
+    <li><a onclick="changePage(4)" id="page4">4</a></li>
+    <li><a onclick="changePage(5)" id="page5">5</a></li>
+    <li><a onclick="changePage(6)">Próximo →</a></li>
+  </ul>
+
+  <button class="btn" onclick="resetPagination()">Voltar para Página 1</button>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 5;
+
+    const pageContent = {
+      1: { title: 'Página 1', content: 'Este é o conteúdo da página 1. Use a paginação abaixo para navegar.' },
+      2: { title: 'Página 2', content: 'Este é o conteúdo da página 2. A paginação ajuda a organizar muitos dados.' },
+      3: { title: 'Página 3', content: 'Este é o conteúdo da página 3. Cada página contém diferentes informações.' },
+      4: { title: 'Página 4', content: 'Este é o conteúdo da página 4. Navegue para ver todo o conteúdo.' },
+      5: { title: 'Página 5', content: 'Este é o conteúdo da página 5. Esta é a última página disponível.' }
+    };
+
+    function changePage(pageNum) {
+      // Validações
+      if (pageNum === 0 && currentPage === 1) return; // Anterior na página 1
+      if (pageNum === 6 && currentPage === totalPages) return; // Próximo na última página
+      
+      if (pageNum === 0) pageNum = currentPage - 1;
+      else if (pageNum === 6) pageNum = currentPage + 1;
+      
+      if (pageNum < 1 || pageNum > totalPages) return;
+
+      currentPage = pageNum;
+      updatePage();
+    }
+
+    function updatePage() {
+      // Atualizar conteúdo
+      const content = pageContent[currentPage];
+      document.getElementById('pageTitle').textContent = content.title;
+      document.getElementById('pageContent').textContent = content.content;
+
+      // Atualizar paginação visual
+      document.querySelectorAll('.pagination a').forEach(a => a.classList.remove('active'));
+      document.getElementById('page' + currentPage).classList.add('active');
+
+      // Atualizar info
+      document.getElementById('pageInfo').innerHTML = `<p><strong>Página Atual:</strong> ${currentPage} de ${totalPages}</p>`;
+    }
+
+    function resetPagination() {
+      currentPage = 1;
+      updatePage();
+    }
+  </script>
+</body>
+</html>

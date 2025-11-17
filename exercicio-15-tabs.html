@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 15 - Tabs</title>
+  <style>
+    body {
+      font-family: Montserrat, system-ui, sans-serif;
+      margin: 2rem;
+      max-width: 600px;
+    }
+    /* 15. Tabs */
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 1.5rem;
+    }
+    .tab {
+      padding: 1rem;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      color: #666;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .tab:hover {
+      color: #1a5490;
+    }
+    .tab.active {
+      color: #1a5490;
+      border-bottom-color: #1a5490;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercício 15 - Tabs</h1>
+
+  <div class="tabs">
+    <div class="tab active" onclick="showTab(event, 'tab1')">Tab 1</div>
+    <div class="tab" onclick="showTab(event, 'tab2')">Tab 2</div>
+    <div class="tab" onclick="showTab(event, 'tab3')">Tab 3</div>
+  </div>
+
+  <button class="btn" onclick="resetTabs()" style="margin-top: 2rem;">Restaurar Tabs</button>
+
+  <div id="tab1" class="tab-content active">
+    <h3>Conteúdo da Tab 1</h3>
+    <p>Este é o conteúdo da primeira tab. Clique nas abas acima para trocar de conteúdo.</p>
+  </div>
+
+  <div id="tab2" class="tab-content">
+    <h3>Conteúdo da Tab 2</h3>
+    <p>Este é o conteúdo da segunda tab. As tabs são úteis para organizar conteúdo relacionado.</p>
+  </div>
+
+  <div id="tab3" class="tab-content">
+    <h3>Conteúdo da Tab 3</h3>
+    <p>Este é o conteúdo da terceira tab. Use tabs quando quiser manter a página limpa e organizada.</p>
+  </div>
+
+  <style>
+    .btn {
+      padding: 0.75rem 1.5rem;
+      background-color: #1a5490;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0e3558;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(26, 84, 144, 0.3);
+    }
+  </style>
+
+  <script>
+    function showTab(evt, tabName) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+      tablinks = document.getElementsByClassName("tab");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].classList.remove("active");
+      }
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+
+    function resetTabs() {
+      const tabs = document.querySelectorAll('.tab');
+      const tabContents = document.querySelectorAll('.tab-content');
+      
+      tabs.forEach(t => t.classList.remove('active'));
+      tabContents.forEach(tc => tc.classList.remove('active'));
+      
+      tabs[0].classList.add('active');
+      tabContents[0].classList.add('active');
+    }
+  </script>
+</body>
+</html>
