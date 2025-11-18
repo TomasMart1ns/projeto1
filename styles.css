@@ -10,13 +10,7 @@
   border-left:3px solid transparent;
   transition:all 0.2s;
 }
-.nav-dropdown:hover .nav-dropdown-title,
-.nav-dropdown:focus-within .nav-dropdown-title {
-  background:#e8e8e8;
-  border-left-color:#1a5490;
-  color:#1a5490;
-  font-weight:600;
-}
+
 .nav-dropdown-content {
   display: none;
   position: absolute;
