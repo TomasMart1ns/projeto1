@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Seu App</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos para centralizar o formulário de login */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--bg); /* Usa a cor de fundo definida no CSS */
+        }
+        .login-card {
+            width: 100%;
+            max-width: 400px; /* Limita a largura do card para focar o formulário */
+            padding: 20px;
+            text-align: center;
+        }
+        .login-card h2 {
+            margin-bottom: 25px;
+            color: var(--accent); /* Usa a cor de destaque para o título */
+        }
+        .form-label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+        }
+        .forgot-password {
+            display: block;
+            text-align: right;
+            margin-top: -5px; /* Ajuste para colocar perto do campo de senha */
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+        .forgot-password a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <div class="card login-card">
+        <h2>Faça seu Login</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="seu.email@exemplo.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password" class="form-label">Senha</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" required>
+                <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+            </div>
+            
+            <button type="submit" class="btn-primary" style="width: 100%; margin-top: 15px;">Entrar</button>
+        </form>
+        
+        <p style="margin-top: 20px; font-size: 12px;">
+            Não tem uma conta? <a href="#" style="color: var(--accent); text-decoration: none;">Cadastre-se</a>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
