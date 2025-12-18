@@ -203,14 +203,36 @@ progress{width:100%;height:20px;border-radius:4px;border:1px solid #ddd}
 
 .alert-primary{background:#cce5ff;padding:1rem;border-radius:5px;margin:.5rem 0;border-left:4px solid var(--accent)}
 
-/* responsive */
-@media (max-width:900px){
-  .layout{flex-direction:column}
-  .sidebar{width:100%;height:auto}
-  .sidebar-nav{flex-direction:row;flex-wrap:wrap}
-  .nav-item{flex:1;min-width:80px}
-  .content-grid{grid-template-columns:1fr}
-  .dashboard-grid{grid-template-columns:1fr}
-  .card.wide{grid-column:auto}
-  .bottom-grid{grid-template-columns:1fr}
+/* Forçar layout de PC em qualquer ecrã */
+@media (max-width: 900px) {
+  .layout {
+    display: flex !important; /* Mantém a sidebar ao lado do conteúdo */
+    flex-direction: row !important;
+    width: 1200px; /* Largura fixa de desktop */
+  }
+
+  .sidebar {
+    width: 130px !important; /* Mantém a largura original */
+    display: block !important;
+  }
+
+  .main-wrapper {
+    flex: 1;
+    min-width: 1000px; /* Garante que o conteúdo não encolha */
+  }
+
+  .content-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1.2fr !important; /* Mantém as duas colunas */
+  }
+
+  .bottom-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr !important; /* Mantém as três colunas */
+  }
+
+  /* Impede que as tabelas ou textos tentem ajustar-se */
+  .payment-table, .main-content {
+    overflow: visible !important;
+  }
 }
