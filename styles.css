@@ -10,6 +10,18 @@
   border-left:3px solid transparent;
   transition:all 0.2s;
 }
+.nav-dropdown {
+  position:relative;
+}
+.nav-dropdown-title {
+  display:block;
+  cursor:pointer;
+  padding:12px 10px;
+  color:#333;
+  font-size:12px;
+  border-left:3px solid transparent;
+  transition:all 0.2s;
+}
 
 .nav-dropdown-content {
   display: none;
@@ -27,6 +39,476 @@
 .nav-dropdown:focus-within .nav-dropdown-content {
   display: flex;
 }
+.sidebar {
+    background-color: #364759; 
+    border-right: none;
+    width: 200px; 
+    padding: 0;
+    font-family: inherit;
+    color: #e0e0e0;
+}
+
+.search-box {
+    padding: 15px;
+    background-color: #2e3b4e;
+    margin-bottom: 10px;
+}
+.search-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #556070;
+    color: #fff;
+    font-size: 14px;
+}
+.search-input::placeholder {
+    color: #ccc;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 0; 
+}
+
+.nav-item {
+    padding: 10px 15px; 
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 13px; 
+    border-left: 3px solid transparent;
+    display: block;
+    transition: all 0.2s;
+    font-weight: 500;
+    text-transform: uppercase; 
+}
+
+.nav-item:hover {
+    background-color: #435466; 
+    border-left-color: #ff9800; 
+}
+.nav-item.active {
+    background-color: #3f5164; 
+    border-left-color: #ff5722; 
+    color: #fff;
+    font-weight: 600;
+}
+
+.nav-item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.badge {
+    background-color: #e0e0e0; 
+    color: #364759; 
+    border-radius: 4px; 
+    padding: 1px 6px;
+    font-size: 11px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--bg); 
+        }
+        .login-card {
+            width: 100%;
+            max-width: 400px; 
+            padding: 20px;
+            text-align: center;
+        }
+        .login-card h2 {
+            margin-bottom: 25px;
+            color: var(--accent); 
+        }
+        .form-label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+        }
+        .forgot-password {
+            display: block;
+            text-align: right;
+            margin-top: -5px; 
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+        .forgot-password a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+.nav-dropdown-link {
+  padding:10px 15px;
+  color:#333;
+  text-decoration:none;
+  font-size:12px;
+  border-left:3px solid transparent;
+  transition:all 0.2s;
+  display:block;
+}
+.nav-dropdown-link:hover {
+  background:#e8e8e8;
+  border-left-color:#1a5490;
+  color:#1a5490;
+}
+:root{
+  --bg:#f5f5f5;--surface:#fff;--muted:#7d8790;--accent:#1a5490;--card-shadow:0 2px 8px rgba(0,0,0,0.08);
+  --max-width:1100px;--sidebar-width:130px;
+}
+*{box-sizing:border-box}
+body{font-family:Montserrat,Inter,system-ui,Segoe UI,Arial,sans-serif;margin:0;background:var(--bg);color:#222}
+
+.layout{display:flex;height:100vh}
+
+.sidebar{width:var(--sidebar-width);background:#f0f0f0;border-right:1px solid #ddd;overflow-y:auto;padding:0}
+.sidebar-header{padding:15px;border-bottom:1px solid #ddd;background:#fff}
+.logo{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.logo-icon{width:40px;height:40px;background:#1a5490;color:#fff;border-radius:4px;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:12px;margin:0 auto}
+.logo-text{font-size:10px;font-weight:600;color:#333;line-height:1.2}
+
+.sidebar-nav{display:flex;flex-direction:column;padding:10px 0}
+.nav-item{padding:12px 10px;color:#333;text-decoration:none;font-size:12px;border-left:3px solid transparent;display:block;transition:all 0.2s}
+.nav-item:hover{background:#e8e8e8;border-left-color:#1a5490}
+.nav-item.active{background:#e3f2fd;border-left-color:#1a5490;color:#1a5490;font-weight:600}
+
+.nav-group {display:flex;flex-direction:column;}
+.nav-group-title {
+  font-weight:600;
+  color:#1a5490;
+  background:transparent;
+  cursor:default;
+  padding:12px 10px 6px 10px;
+  font-size:12px;
+  border-left:3px solid transparent;
+}
+.nav-subitem {
+  padding:8px 24px;
+  color:#333;
+  text-decoration:none;
+  font-size:12px;
+  border-left:3px solid transparent;
+  display:block;
+  transition:all 0.2s;
+}
+.nav-subitem:hover {
+  background:#e8e8e8;
+  border-left-color:#1a5490;
+  color:#1a5490;
+}
+
+.nav-tab {position:relative;cursor:pointer;}
+.nav-tab > span {display:block;}
+.tab-dropdown {
+  display:none;
+  position:absolute;
+  left:100%;
+  top:0;
+  background:#fff;
+  border:1px solid #ddd;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+  min-width:160px;
+  z-index:10;
+  flex-direction:column;
+}
+.nav-tab:hover .tab-dropdown, .nav-tab:focus-within .tab-dropdown {
+  display:flex;
+}
+.tab-link {
+  padding:10px 15px;
+  color:#333;
+  text-decoration:none;
+  font-size:12px;
+  border-left:3pt solid transparent;
+  transition:all 0.2s;
+  display:block;
+}
+.tab-link:hover {
+  background:#e8e8e8;
+  border-left-color:#1a5490;
+  color:#1a5490;
+}
+
+.main-wrapper{flex:1;display:flex;flex-direction:column}
+
+.site-header{background:#0b4a8a;color:#fff;padding:15px 25px;border-bottom:1px solid #ddd}
+.site-header h1{margin:0;font-size:18px;font-weight:600}
+.header-content{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.header-links{display:flex;gap:20px;align-items:center}
+.header-links a{color:#fff;text-decoration:none;font-size:13px}
+.header-links a:hover{text-decoration:underline}
+.user-profile{width:40px;height:40px;border-radius:50%;overflow:hidden;background:#fff}
+.user-profile img{width:100%;height:100%;object-fit:cover}
+
+.main-content{flex:1;padding:20px;overflow-y:auto;max-width:1200px;margin:0 auto;width:100%}
+
+.main-content h1{font-size:28px;color:#1E1A50;margin-top:0}
+.main-content h2{font-size:16px;color:#1E1A50}
+.main-content h3{font-size:14px;color:#1A2950}
+.main-content p{font-size:13px;color:#1A2950}
+
+.content-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:25px;margin-bottom:30px}
+.left-column,.right-column{background:#fff;padding:20px;border-radius:6px;box-shadow:var(--card-shadow)}
+
+.card-section h2{margin:0 0 15px;font-size:16px;font-weight:600;display:flex;align-items:center;gap:10px}
+.info-icon{font-size:16px}
+
+.section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
+.section-header h2{margin:0;font-size:16px;font-weight:600}
+.settings-btn{background:none;border:none;cursor:pointer;font-size:18px;padding:0}
+
+.payment-info{font-size:13px;margin-bottom:15px}
+
+.payment-table{width:100%;border-collapse:collapse;font-size:12px}
+.payment-table th{background:#f5f5f5;padding:10px;text-align:left;font-weight:600;border-bottom:2px solid #ddd}
+.payment-table td{padding:10px;border-bottom:1px solid #eee}
+.payment-table tr:hover{background:#fafafa}
+
+.bottom-section{background:#fff;padding:20px;border-radius:6px;box-shadow:var(--card-shadow);display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.bottom-section h2{margin:0;font-size:16px;font-weight:600;flex:1}
+
+.bottom-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.bottom-left,.bottom-center,.bottom-right{background:#fff;padding:20px;border-radius:6px;box-shadow:var(--card-shadow);min-height:300px}
+
+.notices-list{list-style:none;padding:0;margin:0}
+.notices-list li{margin-bottom:15px;font-size:13px}
+.notices-list a{color:#1a5490;text-decoration:none}
+.notices-list a:hover{text-decoration:underline}
+
+.card{border:1px solid #ccc;padding:1rem;border-radius:8px;margin:1rem 0;background:var(--surface);box-shadow:var(--card-shadow)}
+.card h2, .card h3{margin-top:0}
+
+.btn-primary{background-color:var(--accent);color:#fff;padding:.5rem 1rem;border:none;border-radius:6px;cursor:pointer;font-family:inherit;transition:opacity 0.2s}
+.btn-primary:hover{opacity:0.9; transform: translateY(-1px);}
+
+.btn-secondary{background-color:#6c757d;color:#fff;padding:.5rem 1rem;border:none;border-radius:6px;cursor:pointer;font-family:inherit;transition:opacity 0.2s}
+.btn-secondary:hover{opacity:0.9}
+
+.form-control, .form-select{display:block;width:100%;margin-bottom:1rem;padding:.5rem;border:1px solid #ccc;border-radius:4px;font-family:inherit;font-size:inherit}
+
+.list-group{list-style:none;padding:0}
+.list-group-item{padding:.5rem;border-bottom:1px solid #ccc}
+
+.badge{background:red;color:white;border-radius:50%;padding:.25rem .5rem;font-size:.8rem;margin-left:.5rem}
+
+dialog{border:1px solid #ccc;border-radius:8px;padding:2rem;box-shadow:0 4px 16px rgba(0,0,0,0.15)}
+dialog::backdrop{background:rgba(0,0,0,0.5);backdrop-filter:blur(3px)}
+
+.navbar{background:#f8f9fa;padding:1rem;display:flex;gap:1rem;border-bottom:1px solid #ddd;border-radius:4px}
+.navbar a{color:var(--accent);text-decoration:none;padding:.5rem 1rem}
+.navbar a:hover{background:#f0f0f0;border-radius:4px}
+
+.pagination{list-style:none;display:flex;gap:.5rem}
+.pagination a{padding:.5rem 1rem;border:1px solid #ddd;border-radius:4px;text-decoration:none;color:var(--accent)}
+.pagination a:hover{background:#f0f0f0}
+
+progress{width:100%;height:20px;border-radius:4px;border:1px solid #ddd}
+
+.table{width:100%;border-collapse:collapse;margin-top:1rem;font-size:13px}
+.table th{background:#f5f5f5;padding:.5rem;border:1px solid #ddd;text-align:left;font-weight:bold}
+.table td{border:1px solid #ddd;padding:.5rem}
+.table tr:hover{background:#fafafa}
+
+.alert-primary{background:#cce5ff;padding:1rem;border-radius:5px;margin:.5rem 0;border-left:4px solid var(--accent)}
+
+@media (max-width:900px){
+  .layout{flex-direction:column}
+  .sidebar{width:100%;height:auto}
+  .sidebar-nav{flex-direction:row;flex-wrap:wrap}
+  .nav-item{flex:1;min-width:80px}
+  .content-grid{grid-template-columns:1fr}
+  .dashboard-grid{grid-template-columns:1fr}
+  .card.wide{grid-column:auto}
+  .bottom-grid{grid-template-columns:1fr}
+}
+
+/* Novos estilos para a página 404 aprimorada */
+.error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg);
+    text-align: center;
+    padding: 20px;
+}
+.error-card {
+    background: var(--surface);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow); /* Aplica a sombra do sistema */
+    max-width: 500px;
+    width: 100%;
+}
+.error-code {
+    font-size: 10rem; /* Aumentado para maior impacto */
+    font-weight: 900;
+    color: var(--accent);
+    margin: 0;
+    line-height: 1;
+    opacity: 0.8;
+}
+.error-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin: 10px 0 15px 0;
+}
+.error-message {
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  min-width: 160px;
+  z-index: 100;
+  flex-direction: column;
+}
+.nav-dropdown:hover .nav-dropdown-content,
+.nav-dropdown:focus-within .nav-dropdown-content {
+  display: flex;
+}
+/* --- Novo CSS para a Sidebar escura (como na imagem) --- */
+/* 1. Cores e Layout Principal */
+.sidebar {
+    /* Cor de fundo principal da barra lateral (cinza escuro) */
+    background-color: #364759; 
+    border-right: none;
+    width: 200px; /* Largura ajustada para o visual da imagem */
+    padding: 0;
+    font-family: inherit;
+    color: #e0e0e0;
+}
+
+/* 2. Caixa de Busca */
+.search-box {
+    padding: 15px;
+    background-color: #2e3b4e;
+    margin-bottom: 10px;
+}
+.search-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #556070;
+    color: #fff;
+    font-size: 14px;
+}
+.search-input::placeholder {
+    color: #ccc;
+}
+
+/* 3. Itens de Navegação (Links) */
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 0; /* Remove padding desnecessário */
+}
+
+/* Ajusta o estilo do nav-item para o novo fundo escuro */
+.nav-item {
+    padding: 10px 15px; /* Ajuste fino do padding */
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 13px; /* Fonte um pouco maior */
+    border-left: 3px solid transparent;
+    display: block;
+    transition: all 0.2s;
+    font-weight: 500;
+    text-transform: uppercase; /* Deixa o texto em maiúsculas como na imagem */
+}
+
+/* Efeito de hover e item ATIVO (Selecionado) */
+.nav-item:hover {
+    background-color: #435466; 
+    border-left-color: #ff9800; /* Destaque laranja no hover */
+}
+.nav-item.active {
+    /* Fundo do item ativo (SHOPPING LIST) */
+    background-color: #3f5164; 
+    /* Borda lateral vermelha/laranja da imagem */
+    border-left-color: #ff5722; 
+    color: #fff;
+    font-weight: 600;
+}
+
+/* 4. Estilos para o Contador (Badge) */
+.nav-item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.badge {
+    /* Cor do badge na imagem é um cinza claro ou branco */
+    background-color: #e0e0e0; 
+    color: #364759; /* Cor do texto no badge */
+    border-radius: 4px; /* Quadrado arredondado, não um círculo */
+    padding: 1px 6px;
+    font-size: 11px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+        /* Estilos específicos para centralizar o formulário de login */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--bg); /* Usa a cor de fundo definida no CSS */
+        }
+        .login-card {
+            width: 100%;
+            max-width: 400px; /* Limita a largura do card para focar o formulário */
+            padding: 20px;
+            text-align: center;
+        }
+        .login-card h2 {
+            margin-bottom: 25px;
+            color: var(--accent); /* Usa a cor de destaque para o título */
+        }
+        .form-label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+        }
+        .forgot-password {
+            display: block;
+            text-align: right;
+            margin-top: -5px; /* Ajuste para colocar perto do campo de senha */
+            margin-bottom: 15px;
+            font-size: 12px;
+        }
+        .forgot-password a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
 .nav-dropdown-link {
   padding:10px 15px;
   color:#333;
