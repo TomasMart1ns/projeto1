@@ -3,27 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=1000">
-  <title>Processos — InfoAlunos</title>
+  <title>Inscrição em Turmas — InfoAlunos</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="layout">
+    
     <aside class="sidebar">
       <nav class="sidebar-nav">
         <a href="index.html" class="nav-item">Início</a>
         
-        <div class="nav-item has-submenu active">
+        <div class="nav-item has-submenu">
           <span class="nav-label">Geral</span><span class="nav-arrow">&rsaquo;</span>
           <div class="nav-dropdown-content">
             <div class="dropdown-header">Geral</div>
-            <a href="processos.html" style="background-color: #e8e8e8; color: #000; font-weight: bold;">Processos</a>
+            <a href="processos.html">Processos</a>
             <a href="dados-pessoais.html">Dados Pessoais</a>
             <a href="privacidade.html">Privacidade</a>
             <a href="ajuda.html">Ajuda</a>
           </div>
         </div>
 
-        <div class="nav-item has-submenu"><span class="nav-label">Serviços</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Serviços</div><a href="pagamentos.html">Pagamentos</a><a href="matriculas.html">Matrículas/Inscrições</a><a href="inscricao-turmas.html">Inscrição em Turmas</a><a href="requerimentos.html">Requerimentos</a><a href="cartao.html">Cartão Universitário</a><a href="bolsas.html">SASUMa-Bolsas</a></div></div>
+        <div class="nav-item has-submenu active">
+          <span class="nav-label">Serviços</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Serviços</div>
+            <a href="pagamentos.html">Pagamentos</a>
+            <a href="matriculas.html">Matrículas/Inscrições</a>
+            <a href="inscricao-turmas.html" style="background-color: #e8e8e8; color: #000; font-weight: bold;">Inscrição em Turmas</a>
+            <a href="requerimentos.html">Requerimentos</a>
+            <a href="cartao.html">Cartão Universitário</a>
+            <a href="bolsas.html">SASUMa-Bolsas</a>
+          </div>
+        </div>
+
         <div class="nav-item has-submenu"><span class="nav-label">Concursos</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Concursos</div><a href="candidaturas.html">Candidaturas</a></div></div>
         <div class="nav-item has-submenu"><span class="nav-label">Avaliação</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Avaliação</div><a href="pautas.html">Pautas</a><a href="reclamacao-nota.html">Reclamação de Nota</a><a href="inqueritos.html">Inquéritos</a><a href="resultados-inqueritos.html">Resultados de Inquéritos</a><a href="raides.html">Inquérito RAIDES</a></div></div>
         <div class="nav-item has-submenu"><span class="nav-label">Creditações</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Creditações</div><a href="lista-processos.html">Lista de Processos</a><a href="novo-processo.html">Novo Processo</a></div></div>
@@ -46,12 +59,33 @@
           <div class="header-links"><span class="lang-switch">PT | EN</span><div class="user-profile"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%23d1d1d1'/%3E%3Ccircle cx='24' cy='20' r='8' fill='%23666'/%3E%3Cpath d='M8 44 C 8 34, 40 34, 40 44' fill='%23666'/%3E%3C/svg%3E" alt="User"></div></div>
         </div>
       </header>
+
       <main class="main-content">
-        <div class="white-panel">
-            <h2 class="panel-title">Lista de Processos do Aluno - Unidade de Assuntos Académicos</h2>
-            <a href="#" class="house-icon">&#8962;</a> 
+        
+        <div class="white-panel empty-state-panel">
+            
+            <div class="empty-state-image">
+                <svg width="250" height="200" viewBox="0 0 250 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="125" cy="100" r="80" fill="#f0f9ff"/>
+                    <circle cx="110" cy="90" r="40" stroke="#333" stroke-width="8" fill="white"/>
+                    <line x1="140" y1="115" x2="190" y2="165" stroke="#333" stroke-width="8" stroke-linecap="round"/>
+                    <path d="M100 70 A 20 20 0 0 1 120 75" stroke="#a5d8ff" stroke-width="4" stroke-linecap="round"/>
+                    <circle cx="70" cy="140" r="15" fill="#2563eb"/>
+                    <path d="M50 180 Q 70 140 90 180" stroke="#2563eb" stroke-width="20" fill="none" stroke-linecap="round"/>
+                    <circle cx="160" cy="120" r="15" fill="#1e40af"/>
+                    <path d="M140 170 Q 160 120 180 170" stroke="#1e40af" stroke-width="20" fill="none" stroke-linecap="round"/>
+                </svg>
+            </div>
+
+            <div class="empty-state-text">
+                <h2>Não foram encontradas inscrições em UC's</h2>
+                <p>Não existe nenhum periodo de inscrição disponível</p>
+            </div>
+
         </div>
+
       </main>
+
       <footer class="site-footer">
         <div class="footer-left"><strong>&copy; Universidade da Madeira</strong> - Gabinete de Desenvolvimento de Aplicações Informáticas</div>
         <div class="footer-right"><span class="footer-logo">madeira digital</span><span class="footer-logo">POSI</span><span class="footer-logo-eu">EU</span></div>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1000">
+  <title>Horários — InfoAlunos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="layout">
+    
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item">Início</a>
+        
+        <div class="nav-item has-submenu">
+          <span class="nav-label">Geral</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Geral</div>
+            <a href="processos.html">Processos</a>
+            <a href="dados-pessoais.html">Dados Pessoais</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="ajuda.html">Ajuda</a>
+          </div>
+        </div>
+
+        <div class="nav-item has-submenu">
+          <span class="nav-label">Serviços</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Serviços</div>
+            <a href="pagamentos.html">Pagamentos</a>
+            <a href="matriculas.html">Matrículas/Inscrições</a>
+            <a href="inscricao-turmas.html">Inscrição em Turmas</a>
+            <a href="requerimentos.html">Requerimentos</a>
+            <a href="cartao.html">Cartão Universitário</a>
+            <a href="bolsas.html">SASUMa-Bolsas</a>
+          </div>
+        </div>
+
+        <div class="nav-item has-submenu">
+          <span class="nav-label">Concursos</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Concursos</div>
+            <a href="candidaturas.html">Candidaturas</a>
+          </div>
+        </div>
+
+        <div class="nav-item has-submenu">
+          <span class="nav-label">Avaliação</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Avaliação</div>
+            <a href="pautas.html">Pautas</a>
+            <a href="reclamacao-nota.html">Reclamação de Nota</a>
+            <a href="inqueritos.html">Inquéritos</a>
+            <a href="resultados-inqueritos.html">Resultados de Inquéritos</a>
+            <a href="raides.html">Inquérito RAIDES</a>
+          </div>
+        </div>
+
+        <div class="nav-item has-submenu">
+          <span class="nav-label">Creditações</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Creditações</div>
+            <a href="lista-processos.html">Lista de Processos</a>
+            <a href="novo-processo.html">Novo Processo</a>
+          </div>
+        </div>
+
+        <div class="nav-item has-submenu">
+          <span class="nav-label">Documentos</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Documentos</div>
+            <a href="academicos.html">Académicos</a>
+            <a href="declaracoes.html">Declarações</a>
+          </div>
+        </div>
+
+        <div class="nav-item has-submenu">
+          <span class="nav-label">Aula</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Aula</div>
+            <a href="marcar-presenca.html">Marcar Presença</a>
+            <a href="calendario.html">Calendário</a>
+            <a href="sumarios.html">Sumários</a>
+          </div>
+        </div>
+
+        <div class="nav-item has-submenu active">
+          <span class="nav-label">Curso</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Curso</div>
+            <a href="ficha-curricular.html">Ficha Curricular</a>
+            <a href="horarios.html" style="background-color: #e8e8e8; color: #000; font-weight: bold;">Horários</a>
+            <a href="hist-matriculas.html">Histórico de Matrículas/Inscrições</a>
+            <a href="hist-disciplinas.html">Histórico de Disciplinas Aprovadas</a>
+            <a href="bolonha.html">Transição para Bolonha</a>
+            <a href="plano-conclusao.html">Plano de Conclusão</a>
+            <a href="prescricao.html">Quadro de Prescrição</a>
+            <a href="actividades.html">Actividades Académicas do Aluno</a>
+          </div>
+        </div>
+
+        <div class="nav-item has-submenu"><span class="nav-label">Disciplina</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Disciplina</div><a href="ficha-curso.html">Ficha</a><a href="programa.html">Programa</a><a href="ficheiros-curso.html">Ficheiros</a></div></div>
+        <div class="nav-item has-submenu"><span class="nav-label">Instituição</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Instituição</div><a href="estrutura.html">Estrutura Orgânica</a></div></div>
+        <a href="eleicoes.html" class="nav-item">Eleições</a>
+      </nav>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="site-header">
+        <div class="header-content">
+          <div class="header-left-group">
+            <div class="header-logo-container"><svg width="60" height="30" viewBox="0 0 100 50"><path d="M10,40 L30,10 L50,40 M60,10 h30 M60,25 h20 M60,40 h30" stroke="white" stroke-width="4" fill="none"/></svg><div class="header-uni-text">UNIVERSIDADE da MADEIRA</div></div>
+            <h1>InfoAlunos - Serviço de Informação dos Alunos - v3.1.4</h1>
+          </div>
+          <div class="header-links"><span class="lang-switch">PT | EN</span><div class="user-profile"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%23d1d1d1'/%3E%3Ccircle cx='24' cy='20' r='8' fill='%23666'/%3E%3Cpath d='M8 44 C 8 34, 40 34, 40 44' fill='%23666'/%3E%3C/svg%3E" alt="User"></div></div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        
+        <div class="white-panel" style="padding: 20px;">
+            
+            <div class="schedule-controls">
+                <div class="left-controls">
+                    <button class="btn-pill-outline">Hoje</button>
+                    <div class="nav-arrows">
+                        <button class="arrow-btn">&lt;</button>
+                        <button class="arrow-btn">&gt;</button>
+                    </div>
+                    <span class="date-range">12 jan. - 18 jan. 2026 ⌄</span>
+                </div>
+                
+                <div class="right-controls">
+                    <button class="btn-pill-solid">Aulas</button>
+                    <button class="btn-pill-outline">Avaliação</button>
+                    <span class="icon-btn">📅+</span>
+                    <span class="icon-btn">🖨️</span>
+                </div>
+            </div>
+
+            <div class="schedule-days-header">
+                <div class="day-col active">
+                    <div class="day-number-circle">12</div>
+                    <div class="day-name">SEGUNDA-FEIRA</div>
+                </div>
+                <div class="day-col">
+                    <div class="day-number">13</div>
+                    <div class="day-name">TERÇA-FEIRA</div>
+                </div>
+                <div class="day-col">
+                    <div class="day-number">14</div>
+                    <div class="day-name">QUARTA-FEIRA</div>
+                </div>
+                <div class="day-col">
+                    <div class="day-number">15</div>
+                    <div class="day-name">QUINTA-FEIRA</div>
+                </div>
+                <div class="day-col">
+                    <div class="day-number">16</div>
+                    <div class="day-name">SEXTA-FEIRA</div>
+                </div>
+            </div>
+
+            <div class="schedule-body">
+                
+                <div class="time-col">
+                    <div>07:30</div><div>08:00</div><div>08:30</div><div>09:00</div><div>09:30</div>
+                    <div>10:00</div><div>10:30</div><div>11:00</div><div>11:30</div><div>12:00</div>
+                    <div>12:30</div><div>13:00</div><div>13:30</div><div>14:00</div><div>14:30</div>
+                    <div>15:00</div><div>15:30</div><div>16:00</div><div>16:30</div><div>17:00</div>
+                    <div>17:30</div><div>18:00</div><div>18:30</div><div>19:00</div><div>19:30</div>
+                    <div>20:00</div><div>20:30</div>
+                </div>
+
+                <div class="events-col">
+                    <div class="event-card teal" style="top: 600px; height: 120px;"> <div class="ev-time">17:30-19:30</div>
+                        <div class="ev-title">Design Hipermédia_CTeSP_T...</div>
+                        <div class="ev-loc">[H] Sala de aula n.º 29 - Piso 2</div>
+                    </div>
+                     <div class="event-card teal" style="top: 750px; height: 60px;"> <div class="ev-time">20:00-21:00</div>
+                        <div class="ev-title">Design...</div>
+                    </div>
+                </div>
+
+                <div class="events-col"></div>
+
+                <div class="events-col">
+                     <div class="event-card teal" style="top: 510px; height: 60px;"> <div class="ev-time">16:00-17:00</div>
+                        <div class="ev-title">Design Hipermédia...</div>
+                    </div>
+                    <div class="event-card teal" style="top: 570px; height: 60px;"> <div class="ev-time">17:00-18:00</div>
+                        <div class="ev-title">Design Hipermédia...</div>
+                    </div>
+                </div>
+
+                <div class="events-col">
+                     <div class="event-card purple" style="top: 90px; height: 120px;"> <div class="ev-time">09:00-11:00</div>
+                        <div class="ev-title">Sistemas Operativos e Redes...</div>
+                        <div class="ev-loc">[H] (Ed. Castanheiro) Centro de Simulação Empresarial</div>
+                    </div>
+                    <div class="event-card yellow" style="top: 210px; height: 120px;"> <div class="ev-time">11:00-13:00</div>
+                        <div class="ev-title">Técnicas de Expressão do...</div>
+                    </div>
+                     <div class="event-card blue" style="top: 510px; height: 120px;"> <div class="ev-time">16:00-18:00</div>
+                        <div class="ev-title">Matemática_CTeSP_T...</div>
+                        <div class="ev-loc">[TP] (Ed. Castanheiro) Sala 16 - Piso 0</div>
+                    </div>
+                    <div class="event-card yellow" style="top: 630px; height: 120px;"> <div class="ev-time">18:00-20:00</div>
+                        <div class="ev-title">Técnicas de Expressão do...</div>
+                        <div class="ev-loc">[TP] (Ed. Castanheiro) Sala 16 - Piso 0</div>
+                    </div>
+                </div>
+
+                <div class="events-col">
+                    <div class="event-card red" style="top: 30px; height: 60px;"> <div class="ev-time">08:00-09:00</div>
+                        <div class="ev-title">Introdução à Programaçã...</div>
+                    </div>
+                    <div class="event-card red" style="top: 90px; height: 180px;"> <div class="ev-time">09:00-12:00</div>
+                        <div class="ev-title">Introdução à Programação_CTeSP...</div>
+                        <div class="ev-loc">[H] Sala de Aula n.º 31 - Piso 2</div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div style="display: flex; gap: 10px; justify-content: center; margin-top: 20px;">
+                <button class="btn-action-blue">Consultar outros horários</button>
+                <button class="btn-action-blue">Consultar horário mensal</button>
+            </div>
+
+        </div>
+
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-left"><strong>&copy; Universidade da Madeira</strong> - Gabinete de Desenvolvimento de Aplicações Informáticas</div>
+        <div class="footer-right"><span class="footer-logo">madeira digital</span><span class="footer-logo">POSI</span><span class="footer-logo-eu">EU</span></div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

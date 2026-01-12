@@ -3,27 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=1000">
-  <title>Processos — InfoAlunos</title>
+  <title>Cartão Universitário — InfoAlunos</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="layout">
+    
     <aside class="sidebar">
       <nav class="sidebar-nav">
         <a href="index.html" class="nav-item">Início</a>
         
-        <div class="nav-item has-submenu active">
+        <div class="nav-item has-submenu">
           <span class="nav-label">Geral</span><span class="nav-arrow">&rsaquo;</span>
           <div class="nav-dropdown-content">
             <div class="dropdown-header">Geral</div>
-            <a href="processos.html" style="background-color: #e8e8e8; color: #000; font-weight: bold;">Processos</a>
+            <a href="processos.html">Processos</a>
             <a href="dados-pessoais.html">Dados Pessoais</a>
             <a href="privacidade.html">Privacidade</a>
             <a href="ajuda.html">Ajuda</a>
           </div>
         </div>
 
-        <div class="nav-item has-submenu"><span class="nav-label">Serviços</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Serviços</div><a href="pagamentos.html">Pagamentos</a><a href="matriculas.html">Matrículas/Inscrições</a><a href="inscricao-turmas.html">Inscrição em Turmas</a><a href="requerimentos.html">Requerimentos</a><a href="cartao.html">Cartão Universitário</a><a href="bolsas.html">SASUMa-Bolsas</a></div></div>
+        <div class="nav-item has-submenu active">
+          <span class="nav-label">Serviços</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Serviços</div>
+            <a href="pagamentos.html">Pagamentos</a>
+            <a href="matriculas.html">Matrículas/Inscrições</a>
+            <a href="inscricao-turmas.html">Inscrição em Turmas</a>
+            <a href="requerimentos.html">Requerimentos</a>
+            <a href="cartao.html" style="background-color: #e8e8e8; color: #000; font-weight: bold;">Cartão Universitário</a>
+            <a href="bolsas.html">SASUMa-Bolsas</a>
+          </div>
+        </div>
+
         <div class="nav-item has-submenu"><span class="nav-label">Concursos</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Concursos</div><a href="candidaturas.html">Candidaturas</a></div></div>
         <div class="nav-item has-submenu"><span class="nav-label">Avaliação</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Avaliação</div><a href="pautas.html">Pautas</a><a href="reclamacao-nota.html">Reclamação de Nota</a><a href="inqueritos.html">Inquéritos</a><a href="resultados-inqueritos.html">Resultados de Inquéritos</a><a href="raides.html">Inquérito RAIDES</a></div></div>
         <div class="nav-item has-submenu"><span class="nav-label">Creditações</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Creditações</div><a href="lista-processos.html">Lista de Processos</a><a href="novo-processo.html">Novo Processo</a></div></div>
@@ -46,12 +59,83 @@
           <div class="header-links"><span class="lang-switch">PT | EN</span><div class="user-profile"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%23d1d1d1'/%3E%3Ccircle cx='24' cy='20' r='8' fill='%23666'/%3E%3Cpath d='M8 44 C 8 34, 40 34, 40 44' fill='%23666'/%3E%3C/svg%3E" alt="User"></div></div>
         </div>
       </header>
+
       <main class="main-content">
-        <div class="white-panel">
-            <h2 class="panel-title">Lista de Processos do Aluno - Unidade de Assuntos Académicos</h2>
-            <a href="#" class="house-icon">&#8962;</a> 
+        
+        <h2 class="page-title-center">Dados para emissão do Cartão</h2>
+
+        <div class="white-panel card-request-panel">
+            
+            <div class="card-data-left">
+                <div class="data-row">
+                    <label>Nome</label>
+                    <div class="value">Tomás Oliveira Martins</div>
+                </div>
+                <div class="data-row">
+                    <label>Cartão de cidadão</label>
+                    <div class="value">15683737</div>
+                </div>
+                <div class="data-row">
+                    <label>Departamento</label>
+                    <div class="value">ESTG</div>
+                </div>
+                <div class="data-row">
+                    <label>Curso</label>
+                    <div class="value">Tec Pro Sis Inf</div>
+                </div>
+                <div class="data-row">
+                    <label>Morada</label>
+                    <div class="value">
+                        Vereda Lugar do Meio nº 5 casa 2<br>
+                        9020-295 Funchal<br>
+                        Portugal
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-visual-right">
+                
+                <div class="id-card-mockup">
+                    <div class="card-header">
+                        <div class="card-uni-logo">UNIVERSIDADE<br>DA <span>MADEIRA</span></div>
+                    </div>
+                    
+                    <div class="card-photo">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23eee'/%3E%3Ctext x='50' y='50' font-family='Arial' font-size='12' fill='%23aaa' text-anchor='middle' dy='.3em'%3EFoto%3C/text%3E%3C/svg%3E" alt="Foto">
+                    </div>
+
+                    <div class="card-chip-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2">
+                            <path d="M5 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm14 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-7 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                            <path d="M1.2 5.5C3.5 2.2 7.5 0 12 0c4.5 0 8.5 2.2 10.8 5.5" stroke-opacity="0.5"/>
+                            <path d="M3.5 8C5.2 5.8 8.4 4.5 12 4.5c3.6 0 6.8 1.3 8.5 3.5" stroke-opacity="0.8"/>
+                        </svg>
+                    </div>
+
+                    <div class="card-details">
+                        <div class="card-number">0000 0000 0000 0000</div>
+                        <div class="card-name">TOMAS MARTINS</div>
+                        <div class="card-role-row">
+                            <span>Aluno</span>
+                            <span>2154225</span>
+                        </div>
+                        <div class="card-course-row">
+                            <span>Tec Pro Sis Inf</span>
+                            <span>12/2026</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-status-section">
+                    <label>Estado atual</label>
+                    <div class="status-value">Aguarda Pedido de Cartão</div>
+                </div>
+
+            </div>
         </div>
+
       </main>
+
       <footer class="site-footer">
         <div class="footer-left"><strong>&copy; Universidade da Madeira</strong> - Gabinete de Desenvolvimento de Aplicações Informáticas</div>
         <div class="footer-right"><span class="footer-logo">madeira digital</span><span class="footer-logo">POSI</span><span class="footer-logo-eu">EU</span></div>

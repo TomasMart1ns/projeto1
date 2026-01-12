@@ -1,43 +1,196 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pagamentos — InfoAlunos (proto)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1000">
+  <title>Pagamentos — InfoAlunos</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="index.html">InfoAlunos (proto)</a>
-      <nav class="main-nav">
-        <a href="index.html">Início</a>
-        <a href="pagamentos.html">Pagamentos</a>
-        <a href="requerimentos.html">Requerimentos</a>
+  <div class="layout">
+    
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item">Início</a>
+        
+        <div class="nav-item has-submenu">
+          <span class="nav-label">Geral</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Geral</div>
+            <a href="processos.html">Processos</a>
+            <a href="dados-pessoais.html">Dados Pessoais</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="ajuda.html">Ajuda</a>
+          </div>
+        </div>
+
+        <div class="nav-item has-submenu active">
+          <span class="nav-label">Serviços</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Serviços</div>
+            <a href="pagamentos.html" style="background-color: #e8e8e8; color: #000; font-weight: bold;">Pagamentos</a>
+            <a href="matriculas.html">Matrículas/Inscrições</a>
+            <a href="inscricao-turmas.html">Inscrição em Turmas</a>
+            <a href="requerimentos.html">Requerimentos</a>
+            <a href="cartao.html">Cartão Universitário</a>
+            <a href="bolsas.html">SASUMa-Bolsas</a>
+          </div>
+        </div>
+
+        <div class="nav-item has-submenu"><span class="nav-label">Concursos</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Concursos</div><a href="candidaturas.html">Candidaturas</a></div></div>
+        <div class="nav-item has-submenu"><span class="nav-label">Avaliação</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Avaliação</div><a href="pautas.html">Pautas</a><a href="reclamacao-nota.html">Reclamação de Nota</a><a href="inqueritos.html">Inquéritos</a><a href="resultados-inqueritos.html">Resultados de Inquéritos</a><a href="raides.html">Inquérito RAIDES</a></div></div>
+        <div class="nav-item has-submenu"><span class="nav-label">Creditações</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Creditações</div><a href="lista-processos.html">Lista de Processos</a><a href="novo-processo.html">Novo Processo</a></div></div>
+        <div class="nav-item has-submenu"><span class="nav-label">Documentos</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Documentos</div><a href="academicos.html">Académicos</a><a href="declaracoes.html">Declarações</a></div></div>
+        <div class="nav-item has-submenu"><span class="nav-label">Aula</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Aula</div><a href="marcar-presenca.html">Marcar Presença</a><a href="calendario.html">Calendário</a><a href="sumarios.html">Sumários</a></div></div>
+        <div class="nav-item has-submenu"><span class="nav-label">Curso</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Curso</div><a href="ficha-curricular.html">Ficha Curricular</a><a href="horarios.html">Horários</a><a href="hist-matriculas.html">Histórico de Matrículas/Inscrições</a><a href="hist-disciplinas.html">Histórico de Disciplinas Aprovadas</a><a href="bolonha.html">Transição para Bolonha</a><a href="plano-conclusao.html">Plano de Conclusão</a><a href="prescricao.html">Quadro de Prescrição</a><a href="actividades.html">Actividades Académicas do Aluno</a></div></div>
+        <div class="nav-item has-submenu"><span class="nav-label">Disciplina</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Disciplina</div><a href="ficha-curso.html">Ficha</a><a href="programa.html">Programa</a><a href="ficheiros-curso.html">Ficheiros</a></div></div>
+        <div class="nav-item has-submenu"><span class="nav-label">Instituição</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Instituição</div><a href="estrutura.html">Estrutura Orgânica</a></div></div>
+        <a href="eleicoes.html" class="nav-item">Eleições</a>
       </nav>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="site-header">
+        <div class="header-content">
+          <div class="header-left-group">
+            <div class="header-logo-container"><svg width="60" height="30" viewBox="0 0 100 50"><path d="M10,40 L30,10 L50,40 M60,10 h30 M60,25 h20 M60,40 h30" stroke="white" stroke-width="4" fill="none"/></svg><div class="header-uni-text">UNIVERSIDADE da MADEIRA</div></div>
+            <h1>InfoAlunos - Serviço de Informação dos Alunos - v3.1.4</h1>
+          </div>
+          <div class="header-links"><span class="lang-switch">PT | EN</span><div class="user-profile"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%23d1d1d1'/%3E%3Ccircle cx='24' cy='20' r='8' fill='%23666'/%3E%3Cpath d='M8 44 C 8 34, 40 34, 40 44' fill='%23666'/%3E%3C/svg%3E" alt="User"></div></div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        
+        <div class="payments-top-grid">
+            
+            <div class="white-panel filter-panel">
+                <div class="panel-header-simple">Filtrar Pagamentos</div>
+                <div class="filter-controls">
+                    <label>Ano Lectivo 
+                        <select>
+                            <option selected>2025/26</option>
+                            <option>2024/25</option>
+                        </select>
+                    </label>
+                    <label>Situação do Pagamento 
+                        <select>
+                            <option selected>Por Pagar</option>
+                            <option>Pago</option>
+                            <option>Todos</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="filter-actions">
+                    <button class="btn-search">Pesquisar...</button>
+                </div>
+            </div>
+
+            <div class="white-panel total-panel">
+                <div class="panel-header-simple">Total em Dívida</div>
+                <div class="total-amount">348.50 EUR</div>
+            </div>
+        </div>
+
+        <div class="white-panel">
+            <table class="std-table full-width">
+                <thead>
+                    <tr>
+                        <th style="width: 50px;">AL</th>
+                        <th style="width: 30px;">B</th>
+                        <th>Refª MB</th>
+                        <th>Serviço</th>
+                        <th>Obs</th>
+                        <th>Data Emissão</th>
+                        <th>Data Lim.</th>
+                        <th>Data Pag.</th>
+                        <th>Valor</th>
+                        <th style="text-align: center;">Pagar c/ Cartão<br>de Crédito</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025/26</td><td>N</td><td>215422506</td><td>6ª Prestação de Propinas de CET's</td><td></td><td>2025-09-22</td><td>2026-02-28</td><td></td><td>69.70 EUR</td><td class="center"><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>2025/26</td><td>N</td><td>215422507</td><td>7ª Prestação de Propinas de CET's</td><td></td><td>2025-09-22</td><td>2026-03-31</td><td></td><td>69.70 EUR</td><td class="center"><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>2025/26</td><td>N</td><td>215422508</td><td>8ª Prestação de Propinas de CET's</td><td></td><td>2025-09-22</td><td>2026-04-30</td><td></td><td>69.70 EUR</td><td class="center"><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>2025/26</td><td>N</td><td>215422509</td><td>9ª Prestação de Propinas de CET's</td><td></td><td>2025-09-22</td><td>2026-05-31</td><td></td><td>69.70 EUR</td><td class="center"><input type="checkbox"></td>
+                    </tr>
+                    <tr>
+                        <td>2025/26</td><td>N</td><td>215422510</td><td>10ª Prestação de Propinas de CET's</td><td></td><td>2025-09-22</td><td>2026-06-30</td><td></td><td>69.70 EUR</td><td class="center"><input type="checkbox"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="payments-methods-grid">
+            
+            <div class="white-panel method-panel">
+                <div class="method-header">
+                    <svg width="50" height="30" viewBox="0 0 100 60" class="mb-logo">
+                        <rect width="100" height="60" rx="5" fill="#fff" stroke="#000" stroke-width="2"/>
+                        <text x="50" y="35" font-family="Arial" font-weight="bold" font-size="25" text-anchor="middle">MB</text>
+                        <text x="50" y="52" font-family="Arial" font-size="8" text-anchor="middle">MULTIBANCO</text>
+                    </svg>
+                    <strong>Opção 1 - Pagamento via Multibanco - Pagamento de Serviços</strong>
+                </div>
+                <div class="method-body">
+                    <p>Através da SIBS, pode proceder aos pagamentos utilizando as referências listadas. Quer seja por Multibanco ou através de <em>homebanking</em>.</p>
+                    <p class="method-alert">Processamento de Transações - NÃO IMEDIATO</p>
+                    <ul>
+                        <li>Tem de efectuar um pagamento de cada vez.</li>
+                        <li>O processamento é efectuado pelo sistema todos os dias pelas 22h00...</li>
+                    </ul>
+                    <p><strong>Processo de Pagamento</strong></p>
+                    <ul>
+                        <li>No Multibanco ou <em>homebanking</em>, seleccione "Pagamento de Serviços".</li>
+                        <li>Como Entidade introduza <strong>20697</strong>, como referência, utilize a Refª MB acima listada.</li>
+                    </ul>
+                    <p><strong>Atenção - Data Limite de Pagamento Ultrapassada</strong></p>
+                    <p>Se for ultrapassada a data limite... serão aplicados juros de mora.</p>
+                </div>
+            </div>
+
+            <div class="white-panel method-panel">
+                <div class="method-header">
+                    <div style="display:flex; flex-direction:column; align-items:center; margin-right: 10px;">
+                        <div style="font-weight:bold; color:red; font-size:12px;">redunicre</div>
+                        <div style="background:orange; color:white; font-size:10px; padding:1px 3px;">VISA</div>
+                        <div style="background:blue; color:white; font-size:10px; padding:1px 3px; margin-top:2px;">VISA</div>
+                    </div>
+                    <strong>Opção 2 - Pagamento via Cartão de Crédito</strong>
+                </div>
+                <div class="method-body">
+                    <p>Através da REDUNICRE, pode proceder aos pagamentos via Cartão de Crédito.</p>
+                    <p class="method-alert" style="color: darkred;">Processamento de Transações - IMEDIATO</p>
+                    <ul>
+                        <li>Pode pagar vários produtos de uma vez só.</li>
+                        <li>Ao regressar ao InfoAlunos, terá imediatamente os seus dados actualizados.</li>
+                    </ul>
+                    <p><strong>Processo de Pagamento</strong></p>
+                    <ul>
+                        <li>Na tabela desta página, clique nas linhas correspondentes, a coluna "Pagar via Cartão de Crédito".</li>
+                        <li>Clique no botão "Iniciar Pagamento".</li>
+                    </ul>
+                    <p><strong>Atenção - Data Limite de Pagamento Ultrapassada</strong></p>
+                    <p>Se for ultrapassada a data limite... serão aplicados juros de mora.</p>
+                </div>
+            </div>
+
+        </div>
+
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-left"><strong>&copy; Universidade da Madeira</strong> - Gabinete de Desenvolvimento de Aplicações Informáticas</div>
+        <div class="footer-right"><span class="footer-logo">madeira digital</span><span class="footer-logo">POSI</span><span class="footer-logo-eu">EU</span></div>
+      </footer>
     </div>
-  </header>
-
-  <main class="container">
-    <h2>Pagamentos</h2>
-    <p class="muted">Pesquisar e listar pagamentos</p>
-
-    <div class="panel">
-      <label class="field"><span>Pesquisar</span><input placeholder="ID, ano ou anotação"></label>
-      <table class="table">
-        <thead><tr><th>Data</th><th>Descrição</th><th>Valor</th><th>Estado</th></tr></thead>
-        <tbody>
-          <tr><td>2025-10-01</td><td>Propina 2025</td><td>1.200€</td><td class="ok">Pago</td></tr>
-          <tr><td>2025-09-12</td><td>Taxa de candidatura</td><td>30€</td><td class="ok">Pago</td></tr>
-          <tr><td>2025-11-05</td><td>Contrato</td><td>100€</td><td class="pending">Pendente</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container"><small>Protótipo — Pagamentos</small></div>
-  </footer>
+  </div>
 </body>
 </html>

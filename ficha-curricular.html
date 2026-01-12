@@ -1,0 +1,307 @@
+ficha-curricular.html<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1000">
+  <title>Ficha Curricular — InfoAlunos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="layout">
+    
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item">Início</a>
+        
+        <div class="nav-item has-submenu">
+          <span class="nav-label">Geral</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Geral</div>
+            <a href="processos.html">Processos</a>
+            <a href="dados-pessoais.html">Dados Pessoais</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="ajuda.html">Ajuda</a>
+          </div>
+        </div>
+
+        <div class="nav-item has-submenu">
+          <span class="nav-label">Serviços</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Serviços</div>
+            <a href="pagamentos.html">Pagamentos</a>
+            <a href="matriculas.html">Matrículas/Inscrições</a>
+            <a href="inscricao-turmas.html">Inscrição em Turmas</a>
+            <a href="requerimentos.html">Requerimentos</a>
+            <a href="cartao.html">Cartão Universitário</a>
+            <a href="bolsas.html">SASUMa-Bolsas</a>
+          </div>
+        </div>
+
+        <div class="nav-item has-submenu">
+          <span class="nav-label">Concursos</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Concursos</div>
+            <a href="candidaturas.html">Candidaturas</a>
+          </div>
+        </div>
+
+        <div class="nav-item has-submenu">
+          <span class="nav-label">Avaliação</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Avaliação</div>
+            <a href="pautas.html">Pautas</a>
+            <a href="reclamacao-nota.html">Reclamação de Nota</a>
+            <a href="inqueritos.html">Inquéritos</a>
+            <a href="resultados-inqueritos.html">Resultados de Inquéritos</a>
+            <a href="raides.html">Inquérito RAIDES</a>
+          </div>
+        </div>
+
+        <div class="nav-item has-submenu">
+          <span class="nav-label">Creditações</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Creditações</div>
+            <a href="lista-processos.html">Lista de Processos</a>
+            <a href="novo-processo.html">Novo Processo</a>
+          </div>
+        </div>
+
+        <div class="nav-item has-submenu">
+          <span class="nav-label">Documentos</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Documentos</div>
+            <a href="academicos.html">Académicos</a>
+            <a href="declaracoes.html">Declarações</a>
+          </div>
+        </div>
+
+        <div class="nav-item has-submenu">
+          <span class="nav-label">Aula</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Aula</div>
+            <a href="marcar-presenca.html">Marcar Presença</a>
+            <a href="calendario.html">Calendário</a>
+            <a href="sumarios.html">Sumários</a>
+          </div>
+        </div>
+
+        <div class="nav-item has-submenu active">
+          <span class="nav-label">Curso</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Curso</div>
+            <a href="ficha-curricular.html" style="background-color: #e8e8e8; color: #000; font-weight: bold;">Ficha Curricular</a>
+            <a href="horarios.html">Horários</a>
+            <a href="hist-matriculas.html">Histórico de Matrículas/Inscrições</a>
+            <a href="hist-disciplinas.html">Histórico de Disciplinas Aprovadas</a>
+            <a href="bolonha.html">Transição para Bolonha</a>
+            <a href="plano-conclusao.html">Plano de Conclusão</a>
+            <a href="prescricao.html">Quadro de Prescrição</a>
+            <a href="actividades.html">Actividades Académicas do Aluno</a>
+          </div>
+        </div>
+
+        <div class="nav-item has-submenu"><span class="nav-label">Disciplina</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Disciplina</div><a href="ficha-curso.html">Ficha</a><a href="programa.html">Programa</a><a href="ficheiros-curso.html">Ficheiros</a></div></div>
+        <div class="nav-item has-submenu"><span class="nav-label">Instituição</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Instituição</div><a href="estrutura.html">Estrutura Orgânica</a></div></div>
+        <a href="eleicoes.html" class="nav-item">Eleições</a>
+      </nav>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="site-header">
+        <div class="header-content">
+          <div class="header-left-group">
+            <div class="header-logo-container"><svg width="60" height="30" viewBox="0 0 100 50"><path d="M10,40 L30,10 L50,40 M60,10 h30 M60,25 h20 M60,40 h30" stroke="white" stroke-width="4" fill="none"/></svg><div class="header-uni-text">UNIVERSIDADE da MADEIRA</div></div>
+            <h1>InfoAlunos - Serviço de Informação dos Alunos - v3.1.4</h1>
+          </div>
+          <div class="header-links"><span class="lang-switch">PT | EN</span><div class="user-profile"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%23d1d1d1'/%3E%3Ccircle cx='24' cy='20' r='8' fill='%23666'/%3E%3Cpath d='M8 44 C 8 34, 40 34, 40 44' fill='%23666'/%3E%3C/svg%3E" alt="User"></div></div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        
+        <div class="white-panel" style="padding: 10px; margin-bottom: 20px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:5px;">
+                <h3 class="grades-title" style="margin:0;">Histórico de Inscrições do Aluno</h3>
+                <button class="grades-btn">Imprimir</button>
+            </div>
+
+            <table class="cand-table" style="font-size:10px;">
+                <thead>
+                    <tr>
+                        <th style="width:40px;">Ano Lect</th>
+                        <th>Curso</th>
+                        <th>Tipo</th>
+                        <th>Especialidade</th>
+                        <th style="width:30px;">Ano</th>
+                        <th>Ingresso</th>
+                        <th style="width:40px;">Estatuto</th>
+                        <th style="width:30px;">Est</th>
+                        <th style="width:30px;">Des</th>
+                        <th style="width:30px;">Conc</th>
+                        <th style="width:60px;">Inscrição</th>
+                        <th style="width:60px;">Conclusão</th>
+                        <th style="width:50px;">Diploma</th>
+                        <th style="width:50px;">Dipl Entregue</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">2025/26</a></td>
+                        <td>11024.10.0 2020/21 Tec Progr Sistema Inf</td>
+                        <td>Curso Técnico Superior Profissional</td>
+                        <td>S/Ramos - Esp.</td>
+                        <td>1</td>
+                        <td>Titulares de curso de ensino secundário ou de habilitação legalmente equivalente...</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">N</a></td>
+                        <td>A</td>
+                        <td>N</td>
+                        <td>N</td>
+                        <td>18-09-2025</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="font-size:10px; margin-top:5px; color:#333;">Estado da Inscrição: T- Temporária | A - Activo | C - Congelado | I - Inactivo</p>
+        </div>
+
+        <div class="white-panel" style="padding: 10px;">
+            <h3 class="grades-title" style="margin-bottom:5px;">Unidades Curriculares Inscrito/Aprovadas</h3>
+            
+            <div style="font-size:11px; font-weight:bold; margin-bottom:10px; line-height:1.4;">
+                Ano Lectivo: 2025/26 - Curso: Tecnologias e Programação de Sistemas de Informação Diploma de Técnico Superior Profissional (Curso Técnico Superior Profissional) 11024.10.0 - Plano 2020/21 - Ramo: Sem Ramos - Especialidades
+            </div>
+
+            <table class="cand-table" style="font-size:10px;">
+                <thead>
+                    <tr>
+                        <th style="text-align:left; padding-left:10px;">Disciplina</th>
+                        <th style="width:30px;">Ano</th>
+                        <th style="width:40px;">Período</th>
+                        <th style="width:40px;">ECTS/UC</th>
+                        <th style="width:30px;">AC</th>
+                        <th style="width:30px;">Nível</th>
+                        <th style="width:40px;">Op Comp</th>
+                        <th style="width:30px;">Nota</th>
+                        <th style="width:40px;">Aprov.</th>
+                        <th style="width:40px;">Melhoria</th>
+                        <th style="width:60px;">Dt Melh.</th>
+                        <th style="width:60px;">Avaliação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="odd">
+                        <td style="text-align:left;">206142 Design Hipermédia</td>
+                        <td>1</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">S1</a></td>
+                        <td>6.50</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">CIN</a></td>
+                        <td>T</td>
+                        <td>N</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;">206143 Introdução à Programação</td>
+                        <td>1</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">S1</a></td>
+                        <td>6.50</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">CIN</a></td>
+                        <td>T</td>
+                        <td>N</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr class="odd">
+                        <td style="text-align:left;">206134 Matemática</td>
+                        <td>1</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">S1</a></td>
+                        <td>5.50</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">MAT</a></td>
+                        <td>T</td>
+                        <td>N</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;">206144 Sistemas Operativos e Redes</td>
+                        <td>1</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">S1</a></td>
+                        <td>6.50</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">CIN</a></td>
+                        <td>T</td>
+                        <td>N</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr class="odd">
+                        <td style="text-align:left;">206135 Técnicas de Expressão do Português</td>
+                        <td>1</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">S1</a></td>
+                        <td>5.00</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">LLM</a></td>
+                        <td>T</td>
+                        <td>N</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;">206137 Desenvolvimento Web - Back-End</td>
+                        <td>1</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">S2</a></td>
+                        <td>6.50</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">CIN</a></td>
+                        <td>T</td>
+                        <td>N</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr class="odd">
+                        <td style="text-align:left;">206138 Desenvolvimento Web - Front-End</td>
+                        <td>1</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">S2</a></td>
+                        <td>6.50</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">CIN</a></td>
+                        <td>T</td>
+                        <td>N</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;">206132 Inglês Técnico</td>
+                        <td>1</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">S2</a></td>
+                        <td>5.00</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">LLE</a></td>
+                        <td>T</td>
+                        <td>N</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr class="odd">
+                        <td style="text-align:left;">206136 Programação Orientada por Objetos</td>
+                        <td>1</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">S2</a></td>
+                        <td>6.00</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">CIN</a></td>
+                        <td>T</td>
+                        <td>N</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;">205285 Sistemas Gestores de Bases de Dados I</td>
+                        <td>1</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">S2</a></td>
+                        <td>6.00</td>
+                        <td><a href="#" style="color:blue; text-decoration:underline;">CIN</a></td>
+                        <td>B</td>
+                        <td>N</td>
+                        <td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-left"><strong>&copy; Universidade da Madeira</strong> - Gabinete de Desenvolvimento de Aplicações Informáticas</div>
+        <div class="footer-right"><span class="footer-logo">madeira digital</span><span class="footer-logo">POSI</span><span class="footer-logo-eu">EU</span></div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

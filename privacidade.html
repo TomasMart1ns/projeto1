@@ -1,12 +1,191 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <title>Privacidade</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1000">
+  <title>Privacidade — InfoAlunos</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Privacidade</h1>
-    <p>Conteúdo da secção Privacidade.</p>
+  <div class="layout">
+    <aside class="sidebar">
+      <nav class="sidebar-nav">
+        <a href="index.html" class="nav-item">Início</a>
+        
+        <div class="nav-item has-submenu active">
+          <span class="nav-label">Geral</span><span class="nav-arrow">&rsaquo;</span>
+          <div class="nav-dropdown-content">
+            <div class="dropdown-header">Geral</div>
+            <a href="processos.html">Processos</a>
+            <a href="dados-pessoais.html">Dados Pessoais</a>
+            <a href="privacidade.html" style="background-color: #e8e8e8; color: #000; font-weight: bold;">Privacidade</a>
+            <a href="ajuda.html">Ajuda</a>
+          </div>
+        </div>
+        
+        <div class="nav-item has-submenu"><span class="nav-label">Serviços</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Serviços</div><a href="pagamentos.html">Pagamentos</a><a href="matriculas.html">Matrículas/Inscrições</a><a href="inscricao-turmas.html">Inscrição em Turmas</a><a href="requerimentos.html">Requerimentos</a><a href="cartao.html">Cartão Universitário</a><a href="bolsas.html">SASUMa-Bolsas</a></div></div>
+        <div class="nav-item has-submenu"><span class="nav-label">Concursos</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Concursos</div><a href="candidaturas.html">Candidaturas</a></div></div>
+        <div class="nav-item has-submenu"><span class="nav-label">Avaliação</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Avaliação</div><a href="pautas.html">Pautas</a><a href="reclamacao-nota.html">Reclamação de Nota</a><a href="inqueritos.html">Inquéritos</a><a href="resultados-inqueritos.html">Resultados de Inquéritos</a><a href="raides.html">Inquérito RAIDES</a></div></div>
+        <div class="nav-item has-submenu"><span class="nav-label">Creditações</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Creditações</div><a href="lista-processos.html">Lista de Processos</a><a href="novo-processo.html">Novo Processo</a></div></div>
+        <div class="nav-item has-submenu"><span class="nav-label">Documentos</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Documentos</div><a href="academicos.html">Académicos</a><a href="declaracoes.html">Declarações</a></div></div>
+        <div class="nav-item has-submenu"><span class="nav-label">Aula</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Aula</div><a href="marcar-presenca.html">Marcar Presença</a><a href="calendario.html">Calendário</a><a href="sumarios.html">Sumários</a></div></div>
+        <div class="nav-item has-submenu"><span class="nav-label">Curso</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Curso</div><a href="ficha-curricular.html">Ficha Curricular</a><a href="horarios.html">Horários</a><a href="hist-matriculas.html">Histórico de Matrículas/Inscrições</a><a href="hist-disciplinas.html">Histórico de Disciplinas Aprovadas</a><a href="bolonha.html">Transição para Bolonha</a><a href="plano-conclusao.html">Plano de Conclusão</a><a href="prescricao.html">Quadro de Prescrição</a><a href="actividades.html">Actividades Académicas do Aluno</a></div></div>
+        <div class="nav-item has-submenu"><span class="nav-label">Disciplina</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Disciplina</div><a href="ficha-curso.html">Ficha</a><a href="programa.html">Programa</a><a href="ficheiros-curso.html">Ficheiros</a></div></div>
+        <div class="nav-item has-submenu"><span class="nav-label">Instituição</span><span class="nav-arrow">&rsaquo;</span><div class="nav-dropdown-content"><div class="dropdown-header">Instituição</div><a href="estrutura.html">Estrutura Orgânica</a></div></div>
+        <a href="eleicoes.html" class="nav-item">Eleições</a>
+      </nav>
+    </aside>
+
+    <div class="main-wrapper">
+      
+      <header class="site-header">
+        <div class="header-content">
+          <div class="header-left-group">
+            <div class="header-logo-container">
+                <svg width="60" height="30" viewBox="0 0 100 50">
+                    <path d="M10,40 L30,10 L50,40 M60,10 h30 M60,25 h20 M60,40 h30" stroke="white" stroke-width="4" fill="none"/>
+                </svg>
+                <div class="header-uni-text">UNIVERSIDADE da MADEIRA</div>
+            </div>
+            <h1>InfoAlunos - Serviço de Informação dos Alunos - v3.1.4</h1>
+          </div>
+
+          <div class="header-links">
+            <span class="lang-switch">PT | EN</span>
+            <div class="user-profile">
+              <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect width='48' height='48' fill='%23d1d1d1'/%3E%3Ccircle cx='24' cy='20' r='8' fill='%23666'/%3E%3Cpath d='M8 44 C 8 34, 40 34, 40 44' fill='%23666'/%3E%3C/svg%3E" alt="User">
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        
+        <div class="privacy-header">
+            <h2 class="page-title">Privacidade e Consentimentos</h2>
+            <p class="page-desc">Deverá clicar sobre cada um dos diferentes itens abaixo de modo a permitir ou recusar a utilização dos seus dados pessoais.</p>
+        </div>
+
+        <div class="consent-card">
+            <div class="consent-header">
+                <div class="header-left">
+                    <svg class="consent-icon" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="#0b4a8a" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                    </svg>
+                    <h3 class="consent-title">AUTORIZAÇÃO DE DADOS PESSOAIS</h3>
+                </div>
+                <div class="header-status status-ok">
+                    <span class="status-icon">✔</span> TOMEI CONHECIMENTO
+                </div>
+            </div>
+            <div class="consent-body">
+                <p>Os dados pessoais aqui submetidos são para uso exclusivo da Universidade da Madeira e, nos cursos em parceria, das correspondentes entidades, e não serão nunca divulgados a terceiros nem utilizados para outros fins sem o seu consentimento...</p>
+                <p>Assim, sem prejuízo do atrás referido, os seus dados pessoais poderão ser utilizados pelas seguintes entidades, para os devidos efeitos:</p>
+                
+                <ul class="consent-list">
+                    <li>Pólo de emprego para divulgação das ofertas de emprego;</li>
+                    <li>Entidades cooperantes diversas, para realização de trabalhos académicos/estágios/projetos e/ou atividades laborais;</li>
+                    <li>Gabinete de Comunicação e Marketing (GCM) da UMa...</li>
+                </ul>
+
+                <p class="status-timestamp"><strong>Tomei Conhecimento</strong> em 2025-09-18 16:23</p>
+            </div>
+        </div>
+
+        <div class="consent-card">
+            <div class="consent-header">
+                <div class="header-left">
+                    <svg class="consent-icon" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="#0b4a8a" d="M4 16c0 .88.39 1.67 1 2.22V20c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h8v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1.78c.61-.55 1-1.34 1-2.22V6c0-3.5-3.58-4-8-4s-8 .5-8 4v10zm3.5 1c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm9 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm1.5-6H6V6h12v5z"/>
+                    </svg>
+                    <h3 class="consent-title">PASSE SOCIAL 4_23 E PASSE SOCIAL ESTUDANTES +23 ANOS</h3>
+                </div>
+                <div class="header-status status-pending">
+                    <span class="status-icon-pending">✖</span> AGUARDA AUTORIZAÇÃO
+                </div>
+            </div>
+            <div class="consent-body">
+                <p>No âmbito da Portaria nº 237/2024... os alunos da Universidade da Madeira (UMa) têm acesso ao passe mensal gratuito...</p>
+                
+                <p><strong>Dados Partilhados:</strong></p>
+                <ul class="consent-list">
+                    <li>Número de Identificação Fiscal</li>
+                    <li>Data de Nascimento</li>
+                </ul>
+
+                <div class="warning-box">
+                    <strong>Atenção:</strong> A atualização dos consentimentos aqui efetuados é refletida nas transportadoras no dia seguinte, sendo processada durante a madrugada.
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn-consent">Autorizo</button>
+                    <button class="btn-consent">Não Autorizo</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="consent-card">
+            <div class="consent-header">
+                <div class="header-left">
+                    <svg class="consent-icon" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="#0b4a8a" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    <h3 class="consent-title">CORREIO ELETRÓNICO INSTITUCIONAL - INFORMAÇÃO NÃO ACADÉMICA</h3>
+                </div>
+                <div class="header-status status-pending">
+                    <span class="status-icon-pending">✖</span> AGUARDA AUTORIZAÇÃO
+                </div>
+            </div>
+            <div class="consent-body">
+                <p>Autorizo que a Universidade da Madeira utilize o endereço do meu email institucional (<strong>2154225@student.uma.pt</strong>), para envio de informações não académicas...</p>
+                
+                <p style="font-size: 11px;"><strong>Atenção:</strong> Este consentimento produzirá efeitos a partir de 08-10-2021.</p>
+
+                <div class="action-buttons">
+                    <button class="btn-consent">Autorizo</button>
+                    <button class="btn-consent">Não Autorizo</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="consent-card">
+            <div class="consent-header">
+                <div class="header-left">
+                    <svg class="consent-icon" viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="#0b4a8a" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    <h3 class="consent-title">INCLUSÃO NA LISTA ALUMNI</h3>
+                </div>
+                <div class="header-status status-pending">
+                    <span class="status-icon-pending">✖</span> AGUARDA AUTORIZAÇÃO
+                </div>
+            </div>
+            <div class="consent-body">
+                <p>Autorizo que a Universidade da Madeira utilize o endereço do meu email pessoal (<strong>tomasmartins7010@gmail.com</strong>), na lista Alumni...</p>
+                
+                <p style="font-size: 11px;"><strong>Atenção:</strong> Este consentimento só produzirá efeitos, a partir do momento em que seja diplomado.</p>
+
+                <div class="action-buttons">
+                    <button class="btn-consent">Autorizo</button>
+                    <button class="btn-consent">Não Autorizo</button>
+                </div>
+            </div>
+        </div>
+
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-left">
+            <strong>&copy; Universidade da Madeira</strong> - Gabinete de Desenvolvimento de Aplicações Informáticas...
+        </div>
+        <div class="footer-right">
+            <span class="footer-logo">madeira digital</span>
+            <span class="footer-logo">POSI</span>
+            <span class="footer-logo-eu">EU</span>
+        </div>
+      </footer>
+
+    </div>
+  </div>
 </body>
 </html>
